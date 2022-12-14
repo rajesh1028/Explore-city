@@ -1,136 +1,41 @@
-body {
-  margin: 0;
-  display: auto;
-  width: 100%;
-}
 
+  #navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+  }
 
-#navbar {
-  display: flex;
-  background-color: black;
-  align-items: center;
-}
+  #website-logo{
+    font-size: 50px;
+    border: 1px solid white;
+    width: 18%;
+    text-align: center;
+    padding: 10px;
+  }
 
-#logo {
-  width: 130px;
-  height: 30px;
-  padding-top: 10px;
-  display: flex;
-  size: 100px;
-  margin-left: 0px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.dropbtn>img {
-  width: 30px;
-  height: 30px;
-}
-
-#hamburgerline {
-  width: 20px;
-  height: 20px;
-  padding-bottom: 5px;
-}
-
-#nav1 {
-  float: left;
-  position: relative;
-  left: 20px;
-}
-
-#nav2 {
-  float: left;
-  position: relative;
-  left: 78%;
-  gap: 10px;
-  display: flex;
-  size: 100px;
-  margin-right: 30px;
-  margin-bottom: 0px;
-}
-
-
-/* Dropdown Button */
-.dropbtn {
-  background-color: black;
-  color: white;
-  padding: 6px;
-  font-size: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: black;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: blue;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd
-}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-  display: block;
-}
-
-
-#myDropdowns {
-  display: flex;
-}
-
-.dropdown>button {
-  font-size: 15PX;
-  ;
-}
-
-#hamline {
-  color: black;
-  border: 1px solid teal;
-  ;
-  position: absolute;
-  left: 30%;
-}
-
-
-#sidebox {
-  border: 1px solid teal;
-}
-
-#myDropdowns {
-  visibility: hidden;
-  position: absolute;
-  right: 5%;
-}
-
-#sidebox>#hamline {
-  border: 1px solid teal;
-}
+  #nav-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 1px solid white; */
+    text-align: center;
+    width: 15%;
+  }
+  #nav-buttons > button {
+    font-size: 30px;
+    padding: 15px;
+    margin: 10px auto;
+    background-color: black;
+    color: white;
+  }
+  #menu_btn{
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    background-color: black;
+  }
+  #sigin_btn{
+    height: 50px;
+    width: 50px;
+    margin: auto;
+  }
