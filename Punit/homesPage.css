@@ -1,0 +1,76 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0%;
+  padding: 0%;
+}
+/* cityHomes CSS */
+#CityHHomes {
+  border: 1px solid red;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+#CityHHomes > p:nth-child(1) {
+  font-size: 25px;
+  font-weight: lighter;
+  margin: 20px;
+}
+#CityHHomes > p:nth-child(2) {
+  color: rgb(106, 108, 109);
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 20px;
+}
+
+/* Filter CSS */
+#filter {
+  border: 1px solid red;
+  width: 95%;
+  margin: auto;
+  margin-top: 60px;
+}
+
+#filter > hr {
+  color: rgb(224, 224, 224);
+  border-style: solid;
+}
+#filter > p {
+  font-weight: lighter;
+  text-decoration: underline;
+  text-decoration-color: rgb(30, 135, 240);
+  width: 60px;
+}
+#filterOptions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+#filterOptions > div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+#filterOptions > div > p {
+  font-weight: lighter;
+}
+#filterOptions > div > p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  color: rgb(30, 135, 240);
+}
+
+
+
+/* ..................................................................Media Query......................................... */
+/* medium screen */
+@media screen and (min-width: 651px)and (max-width: 960px){
+  #filterOptions {
+  grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* small screen */
+@media screen and (max-width: 650px){
+  #filterOptions {
+  grid-template-columns: repeat(2, 1fr);
+  }
+}
