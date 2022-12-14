@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        #box{
+            width: 95%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            padding: 3%;
+        }
+        #box p{
+            margin-left: 3%;
+            font-size: 25px;
+        }
+        #box h4{
+            margin-left: 3%;
+            font-size: 18px;
+        }
+        #location{
+            display: flex;
+            flex-direction: column;
+            grid-gap: 10px;
+        }
+        #next{
+            display: flex;
+            margin-left: 90%;
+            margin-top: 20px;
+            padding: 1% 2%;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            border: 0ch;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>Where is your property located? Mark the exact location on the map?</p>
+        <hr>
+        <h4>Search for a landmark near you and put the marker on your exact location
+        </h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d497699.6983259305!2d77.63093949999997!3d12.953997400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1671012596840!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>   
+        <div id="location">
+            <label for="#">
+                Country
+                <select name="country">
+                    <option value="india">INDIA</option>
+                </select>
+            </label>
+            <label for="#">
+                State
+                <select name="state">
+                    <option value="tamilnadu">Tamil Nadu</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="maharastra">Maharastra</option>
+                    <option value="jharkhand">Jharkhand</option>
+                </select>
+            </label>
+            <label for="#">
+                City
+                <select name="city">
+                    <option value="tirupur">Tirupur</option>
+                </select>
+            </label>
+        </div>
+        <hr>
+        <button id="next">NEXT</button>
+    </div>
+</body>
+</html>
