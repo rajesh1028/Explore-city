@@ -19,11 +19,13 @@
 
         #subcontainer1 {
             width: 49%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             /* border: 1px solid black; */
         }
 
         #subcontainer2 {
             width: 49%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             /* border: 1px solid black; */
         }
 
@@ -65,7 +67,7 @@
         #datetime {
             display: flex;
             justify-content: space-between;
-            
+
             /* border: 1px solid black; */
 
         }
@@ -85,13 +87,40 @@
 
         }
 
-        #contactinfo img {
-            margin-top: 15px
+        #specialreq {
+            display: flex;
+            /* border:1px solid black;  */
+            padding: 3px 3px 3px 10px;
+
         }
+
+        #booking {
+            display: flex;
+            /* border:1px solid black;  */
+            padding: 3px 3px 3px 10px;
+
+        }
+
+        /* #booking img {
+            margin-top: 15px;
+            margin-right: 10px
+        } */
+        #specialreq img,
+        #booking img,
+        #contactinfo img {
+            margin-top: 17px;
+            margin-right: 10px
+        }
+
+        /* #contactinfo img {
+            margin-top: 15px;
+            margin-right: 10px
+        } */
 
         #inputtags #email {
             width: 98%;
-            height: 40px
+            height: 40px;
+
         }
 
         #nameinput {
@@ -104,12 +133,49 @@
             /* border:1px solid black */
         }
 
-        input {
+        /* input {
             color: whitesmoke
-        }
-        #inputcontact{
-           
+        } */
+
+        #inputcontact {
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-bottom: 20px
+        }
+
+        input,
+        select,
+        textarea {
+            outline-color: rgb(89, 172, 228);
+        }
+
+        #reqdiv {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;margin-bottom:20px
+
+        }
+        #booknow{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding:10px
+        }
+
+        button {
+            background-color: rgb(240, 80, 110);
+            color: white;
+            padding: 15px 24px 15px 24px;
+            border: 1px solid white
+        }
+        #payOne{
+            display: flex;
+            border: 1px solid black;
+            padding:10px
+        }
+        #payOne img{
+            margin-top: 17px;
+            margin-right: 10px
+        }
+        #paycard{
+            border: 1px solid black;
+            margin-top:30px;
+            padding:10px
         }
     </style>
 </head>
@@ -171,11 +237,11 @@
                             alt="">
                     </div>
                     <div>
-                        <h3>Enter your Contact information</h3>
+                        <h3 style="color:rgb(114, 115, 117)">Enter your Contact information</h3>
                     </div>
-                   
+
                 </div>
-                <hr style="border: 1px solid rgb(236, 226, 226);">
+                <hr style="border: 1px solid rgb(236, 226, 226);margin-top:-5px">
                 <div id="inputtags">
                     <div>
                         <select style="width:13% ; height:46px" id="code">
@@ -194,7 +260,7 @@
                         </select>
 
                         <input style="width:84.5% ; height:40px; margin-bottom:20px" type="number" minlength="10"
-                            maxlength="10">
+                            maxlength="10" color="black">
                     </div>
                     <div id="nameinput">
                         <input style="width:47% ; height:40px; margin-bottom:20px" type="text"
@@ -208,18 +274,77 @@
                 </div>
             </div>
 
-            <div>
+            <div id="reqdiv">
+                <div>
+                    <div id="specialreq">
+                        <div>
+                            <img width="40" height="30"
+                                src="https://icons.veryicon.com/png/o/miscellaneous/ios-icon-library/message-message-3.png"
+                                alt="messageIcon">
+                        </div>
+                        <div>
+                            <h3 style="color:rgb(100, 102, 104)">Are there any special requests?</h3>
+                        </div>
 
+                    </div>
+                </div>
+                <hr style="margin-top:-5px">
+                <div style="padding:4px 4px 4px 15px">
+                    <textarea name="" id="" cols="80" rows="4" placeholder="Your message...."></textarea>
+                    <p style="color:rgb(153,156,163)"> This message will be visible to the owner/manager once she/he
+                        accepts the booking</p>
+                </div>
             </div>
-            <div>
 
-            </div>
-            <div>
+            <div id="booknow">
+                <div id="booking">
+                    <div>
+                        <img width="40" height="30"
+                            src="https://pixlok.com/wp-content/uploads/2022/01/Credit-Card-Icon-SVG-0epdd.png"
+                            alt="paymentIcon">
+                    </div>
+                    <div>
+                        <h3 style="color:rgb(100, 102, 104)">Booking Options</h3>
+                    </div>
 
-            </div>
-            <div id="agree">
+                </div>
+                <hr style="margin-top:-5px;margin-bottom:30px">
 
+                <div id="payOne">
+                    <div>
+                        <img height="70" width="60" src="https://cdn-icons-png.flaticon.com/128/1828/1828649.png" alt="bluetick">
+                    </div>
+                    <div style="margin-left:30px">
+                        <p style="font-size:larger;margin-bottom:-10px">Pay ₹1 Now.</p style="size:medium">
+                        <p style="color:rgb(153,161,183);margin-bottom:-10px">Pay the rest using a payment link only
+                            when home owner/manager accepts the booking.</p>
+                        <p style="font-weight:lighter"> If owner declines the booking, ₹1 will be refunded back to you.
+                            Pay using 100+ payment modes including Credit/Debit cards, Netbanking, UPI, Wallets etc.</p>
+                    </div>
+                </div>
+                <div id="paycard">
+                    <p style="font-size:larger;margin-bottom:-10px">Put your credit/debit card on file.</p
+                        style="size:medium">
+                    <p style="color:rgb(153,161,183);margin-bottom:-10px">Since this booking is on 'Request To Book', We
+                        will only charge your card once owner accepts the
+                        booking.
+                    <p style="margin-bottom:-10px;font-weight:lighter"> This is 100% Secure</p>
+                    </p>
+                    <p style="color:rgb(153,161,183);margin-bottom:-10px"> We DO NOT store/save your credit card
+                        details.</p>
+                    <p style="font-weight:lighter"> We use Stripe.com. has been audited by an independent PCI Qualified
+                        Security Assessor (QSA) and is certified as a PCI Level 1 Service Provider.</p>
+
+                    <div id="button">
+                        <button>CHOOSE THIS METHOD</button>
+                    </div>
+                </div>
             </div>
+            <div id="agree" style="background-color:rgb(248,248,248);margin-top:30px;padding:6px ">
+                  <p>By clicking 'Agree & Continue', you are agreeing to our <u>Terms & Conditions, Privacy Policy</u>, Booking policies like cancellation policies, house rules.</p>
+                
+            </div>
+            <button style="background-color:rgb(30,135,240);width:100%;margin-top:20px">AGREE & CONTINUE</button>
         </div>
     </div>
 
