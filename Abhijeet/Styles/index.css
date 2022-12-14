@@ -1,6 +1,7 @@
 body{
     padding: 0px;
     margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #search {
     width: 100%;
@@ -110,7 +111,7 @@ body{
   }
   
   #explorecity_owned {
-    width: 97%;
+    width: 95%;
     height: auto;
     margin: auto;
     padding: 10px;
@@ -122,8 +123,7 @@ body{
   #explorecity_owned > #explorecity_managed {
     height: 400px;
     width: 30%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 20px;
   }
   
@@ -177,7 +177,7 @@ body{
   }
   
   #opportunities {
-    width: 100%;
+    width: 95%;
     height: auto;
     margin: auto;
     display: flex;
