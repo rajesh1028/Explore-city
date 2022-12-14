@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-style: sans-serif;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/Pimal2-1.2d5d237dbd32.jpg") ;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.box{
+    height: auto;
+    width:500px;
+    background:white;
+    margin:10% auto;
+    padding:30px;
+    position: absolute;
+    transition: 1s;
+    
+}
+.optional{
+     float: right;
+}
+.optional>a{
+    text-decoration: none;
+   color: rgb(17, 138, 231);
+}
+.optional>a:hover{
+    text-decoration: dashed;
+    color: rgb(250, 2, 2);
+}
+.signup-page>h2{
+    font-weight: 100;
+    font-size: 40px;
+}
+.SP-head{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.form-box{
+    margin-top: 20px;
+  
+}
+form>div{
+    margin-bottom: 20px;
+}
+form>div>input{
+    height: 35px;
+   width: fit-content;
+   outline: none;
+}
+form>.form-div>input{
+    width: 100%;
+}
+form>.form-div>p{
+   font-size: 12px;
+   color: rgb(82, 81, 81);
+}
+form>.userName>input{
+    width: 45%;
+}
+#LName{
+   margin-left: 10px;
+}
+
+.butt{
+    width: fit-content;
+    margin: auto;
+    margin-left:67
+    
+} 
+
+.butt>input{
+    width: 100px;
+    background-color: rgb(17, 138, 231);
+    border: none;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px;
+}
+input::placeholder{
+    letter-spacing: 2px;
+}
+/* #signup{
+    
+    position:absolute;
+   
+    transition:1s;
+} */
