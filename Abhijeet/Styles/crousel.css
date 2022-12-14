@@ -1,0 +1,280 @@
+#container_crousle {
+  display: flex;
+  overflow: hidden;
+  width: 98%;
+  margin: auto;
+}
+#slide {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  
+}
+.slider_content {
+  width: 220px;
+  height: 160px;
+  border: 2px solid transparent;
+  margin: 30px;
+  margin-left: 32px;
+}
+#goa {
+  position: relative;
+}
+#goa::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/goa-11.f1c86735cec4.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  z-index: -1;
+}
+
+#kerala {
+  position: relative;
+}
+#kerala::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/kerala-18.c082ce41a521.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.9;
+  z-index: -1;
+}
+#lonavala {
+  position: relative;
+}
+#lonavala::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/lonavala-2293.ab3b797cddf6.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+  z-index: -1;
+}
+#galle {
+  position: relative;
+}
+#galle::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/galle-27739.4e9874b7f375.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
+  z-index: -1;
+}
+#koh-samui {
+  position: relative;
+}
+#koh-samui::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/koh-samui-5119.82e8a6c9cf8b.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+  z-index: -1;
+}
+.slider_content > h1 {
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+.slider_content > p {
+  text-align: center;
+  color: white;
+  margin-top: -10px;
+}
+
+.slider_buttons > #btnprev > span {
+  position: absolute;
+  top: 85%;
+  font-size: 40px;
+  color: gray;
+  border: 1px soldi red;
+}
+
+.slider_buttons > #btnnext > span {
+  position: absolute;
+  top: 85%;
+  font-size: 40px;
+  right: 2%;
+  color: gray;
+  border: 1px soldi red;
+}
+
+/* CSS For Front side of slider*/
+
+#goa_front {
+  position: relative;
+}
+#goa_front::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/goa-11.f1c86735cec4.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  z-index: -1;
+}
+
+#kerala_front {
+  position: relative;
+}
+#kerala_front::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/kerala-18.c082ce41a521.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.9;
+  z-index: -1;
+}
+#lonavala_front {
+  position: relative;
+}
+#lonavala_front::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/lonavala-2293.ab3b797cddf6.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+  z-index: -1;
+}
+#galle_front {
+  position: relative;
+}
+#galle_front::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/galle-27739.4e9874b7f375.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
+  z-index: -1;
+}
+#koh-samui_front {
+  position: relative;
+}
+#koh-samui_front::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/koh-samui-5119.82e8a6c9cf8b.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/*  CSS for BACK */
+
+#goa_back {
+  position: relative;
+}
+#goa_back::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/goa-11.f1c86735cec4.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  z-index: -1;
+}
+
+#kerala_back {
+  position: relative;
+}
+#kerala_back::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/kerala-18.c082ce41a521.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.9;
+  z-index: -1;
+}
+#lonavala_back {
+  position: relative;
+}
+#lonavala_back::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/lonavala-2293.ab3b797cddf6.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+  z-index: -1;
+}
+#galle_back {
+  position: relative;
+}
+#galle_back::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/galle-27739.4e9874b7f375.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
+  z-index: -1;
+}
