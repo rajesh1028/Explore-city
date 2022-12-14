@@ -51,7 +51,7 @@ let img_for_trip = [
   "https://d2vcelvjdj7n25.cloudfront.net/media/gated_community/16729/photo_200/58bf80c4f70b11e992500a8e1b1ce4da_photo_200.jpeg",
   "https://d2vcelvjdj7n25.cloudfront.net/media/gated_community/16726/photo_200/213f117ff1a711e9924e0a8e1b1ce4da_photo_200.jpeg",
 ];
-let alldivs = document.querySelectorAll("#tripvillas_grid div");
+let alldivs = document.querySelectorAll("#explorecity_grid div");
 let i = 0;
 alldivs.forEach((el) => {
   // console.log(el);
