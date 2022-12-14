@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+    <style>
+        #box{
+            width: 90%;
+            margin: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 2%;
+            border-radius: 10px;
+        }
+        button{
+            padding: 1% 2.5%;
+            border: 0ch;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+        #bottom{
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #box>p{
+            font-size: 30px;
+        }
+        #mid{
+            padding: 1.5%;
+        }
+        #mid>p{
+            font-size: 24px;
+        }
+        #mid>div{
+            margin: 1.5% 0px;
+            font-size: 18px;
+        }
+        input{
+            height: 30px;
+            margin-top: 5px;
+            width: 80%;
+            padding-left: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>What are the different types of accommodation do you have?</p>
+        <hr>
+        <div id="mid">
+            <p>For example Standard Room, Deluxe Villa, 2 Bedroom Apartment, 3BHK Bungalow With Private Pool etc</p>
+            <div id="first">Type 1 <br>
+                <input type="text">
+            </div>
+            <div>Type 2 <br>
+                <input type="text">
+            </div>
+            <div>Type 3 <br>
+                <input type="text">
+            </div>
+        </div>
+        <hr>
+        <div id="bottom">
+            <button>PREVIOUS</button>
+            <button>NEXT</button>
+        </div>
+    </div>
+</body>
+</html>
