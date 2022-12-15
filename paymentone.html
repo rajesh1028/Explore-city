@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaymentOne</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #QR {
+            display: flex;
+            margin: auto;
+            padding: 5px;
+            border: 1px solid black;
+            justify-content: space-around;
+            width: 40%;
+        }
+
+        #icons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #refresh {
+            z-index: 10;
+            position: absolute;
+            margin: 60px 50px 50px 25px
+        }
+
+        #qrimage {
+            z-index: -1;
+        }
+        #card,
+        #upi,
+        #netbank,
+        #wallet,
+        #later{
+            display: flex;
+            border:1px solid gainsboro;
+            
+        }
+        #card:hover,
+        #upi:hover,
+        #netbank:hover,
+        #wallet:hover,
+        #later:hover{
+            background-color: rgb(222, 241, 247);
+        }
+        #container
+        {
+            border:1px solid black;
+            width:40%;
+            margin: auto;
+           
+        }
+        #container img{
+            margin:10px 30px 0px 20px
+        }
+        #container p{
+            margin-bottom:-10px;
+           
+        }
+        #paynow{
+            display:flex;
+            width:40%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin:auto;
+            margin-top:40px
+        }
+       
+        #rupee{
+            width:30%;
+            margin-left:10px
+        }
+        #but{
+            width:68%;
+        }
+        #paynow button{
+            width:100%;
+            height:90%;
+            margin-top:5px;
+            font-size: 20px;
+        }
+        #onhover{
+            display: none;
+            position:relative;
+            margin-top:-470px;
+            border:1px solid black;
+            border-radius:10px;
+            width:20%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-left:30px;
+            padding:4px;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- <img id="background"width="100%" height="100%" src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/Pimal2-1.2d5d237dbd32.jpg"
+    alt="background image"> -->
+    <h1 style="text-align:center">Explore City</h1>
+    <hr>
+    <h4 style="margin:auto;text-align: center;margin-bottom:10px;margin-top:20px">Pay With UPI QR</h4>
+    <div id="QR">
+
+        <div id="qrimage">
+            <!-- <button id="refresh" onclick="clickrefresh">Refresh QR</button> -->
+
+            <img id="qrimage"
+                src="https://chart.googleapis.com/chart?chs=141x141&cht=qr&chl=upi%3A%2F%2Fpay%3Fpa%3Drpy.qrrazorpay768603936522%26ver%3D01%26mode%3D15%26qrMedium%3D04%26pn%3DRazorpay%26tr%3DM10rKVfkNww2eBE%26am%3D1%26cu%3DINR%26mc%3D5411%26tn%3DPaymenttoTripvillas&choe=UTF-8&chld=L|0"
+                alt="qr">
+
+        </div>
+        <div>
+            <div>
+                <p>Scan the QR using any UPI app on your phone.</p>
+            </div>
+            <div id="icons">
+                <div>
+                    <img width="40" height="40"
+                        src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-pay-icon.png"
+                        alt="gpay">
+                </div>
+                <div>
+                    <img width="40" height="40"
+                        src="data:image/png;base64,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"
+                        alt="phonepe">
+                </div>
+                <div>
+                    <img width="40" height="40" src="https://download.logo.wine/logo/Paytm/Paytm-Logo.wine.png"
+                        alt="paytm">
+                </div>
+                <div>
+                    <img width="40" height="40"
+                        src="https://cdn.icon-icons.com/icons2/2699/PNG/512/upi_logo_icon_170312.png" alt="upi">
+                </div>
+            </div>
+            <div>
+                <p id="textchange">Refresh QR</p>
+            </div>
+        </div>
+    </div>
+    <h4 style="margin:auto;text-align: center;margin-bottom:10px;margin-top:20px">Cards, UPI & More</h4>
+
+    <div id="container">
+        <div id="card">
+            <div>
+                <div><img width="40" height="50"
+                        src="https://pixlok.com/wp-content/uploads/2022/01/Credit-Card-Icon-SVG-0epdd.png" alt="card">
+                </div>
+            </div>
+            <div >
+                <p>Card</p>
+                <p style="margin-bottom:10px"> Visa, Mastercard, Rupay & more</p>
+            </div>
+            
+            
+        </div>
+        
+        <div id="upi">
+            <div >
+                <div><img width="40" height="50"
+                        src="https://cdn.icon-icons.com/icons2/2699/PNG/512/upi_logo_icon_170312.png" alt=""></div>
+            </div>
+            <div>
+                <p>UPI/QR</p>
+                <p style="margin-bottom:10px">Gpay/PhonePe/Paytm & more</p>
+            </div>
+        </div>
+        
+        <div id="netbank">
+            <div>
+                <div><img width="40" height="50" src="https://cdn-icons-png.flaticon.com/512/4519/4519104.png" alt="">
+                </div>
+            </div>
+            <div>
+                <p>NetBanking</p>
+                <p style="margin-bottom:10px">All Indian Banks</p>
+            </div>
+        </div>
+        
+        <div id="wallet">
+            <div>
+                <div><img width="40" height="50"
+                        src="data:image/png;base64,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"
+                        alt=""></div>
+            </div>
+            <div>
+                <p>Wallet</p>
+                <p style="margin-bottom:10px">PhonePe & more</p>
+            </div>
+        </div>
+        
+
+        <div id="later">
+            <div>
+                <div><img width="40" height="50" src="https://static.thenounproject.com/png/3187853-200.png" alt="">
+                </div>
+            </div>
+            <div>
+                <p>Pay Later</p>
+                <p style="margin-bottom:10px">ICICI</p>
+            </div>
+        </div>
+
+    </div>
+    
+    <div id="paynow">
+        <div id="rupee">
+            <p><b>1 Rupee</b></p>
+            <p>View details</p>
+        </div>
+        <div id="but">
+            <button>Pay Now</button>
+        </div>
+    </div>
+
+    <div id="onhover">
+
+        <input id="cardnumber" type="text" maxlength="16" placeholder="Enter your 16 digits Card number"> <br>
+        <input id="month" maxlength="2"  min="1" max="12" placeholder="MM" type="text" />
+        <input id="year" maxlength="2" placeholder="YY" type="text" /> <br>
+        <input id="ccv" maxlength="3" type="text" placeholder="Enter 3 digit CCV">
+        <br><br>
+        <p>Proceed to click Pay Now </p>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+         document.getElementById("card").addEventListener("click",function(){
+            document.getElementById("card").style.backgroundColor="skyblue"
+            document.getElementById("upi").style.backgroundColor=""
+            document.getElementById("netbank").style.backgroundColor=""
+            document.getElementById("wallet").style.backgroundColor=""
+            document.getElementById("later").style.backgroundColor="";
+            document.querySelector("#onhover").style.display="block"
+             
+
+            
+         });
+        
+
+          document.getElementById("upi").addEventListener("click",function(){
+            document.getElementById("upi").style.backgroundColor="skyblue"
+            document.getElementById("card").style.backgroundColor=""
+            document.getElementById("netbank").style.backgroundColor=""
+            document.getElementById("wallet").style.backgroundColor=""
+            document.getElementById("later").style.backgroundColor=""
+
+            document.querySelector("#onhover").style.display="none"
+
+
+         });
+          document.getElementById("netbank").addEventListener("click",function(){
+            document.getElementById("netbank").style.backgroundColor="skyblue"
+            document.getElementById("card").style.backgroundColor=""
+            document.getElementById("upi").style.backgroundColor=""
+            document.getElementById("wallet").style.backgroundColor=""
+            document.getElementById("later").style.backgroundColor=""
+         });
+          document.getElementById("wallet").addEventListener("click",function(){
+            document.getElementById("wallet").style.backgroundColor="skyblue"
+            document.getElementById("card").style.backgroundColor=""
+            document.getElementById("netbank").style.backgroundColor=""
+            document.getElementById("upi").style.backgroundColor=""
+            document.getElementById("later").style.backgroundColor=""
+         });
+          document.getElementById("later").addEventListener("click",function(){
+            document.getElementById("later").style.backgroundColor="skyblue"
+            document.getElementById("card").style.backgroundColor=""
+            document.getElementById("netbank").style.backgroundColor=""
+            document.getElementById("wallet").style.backgroundColor=""
+            document.getElementById("upi").style.backgroundColor=""
+         });
+         
+         
+        //  document.querySelector("button").addEventListener("click",(()=>{
+              
+        //       console.log("dhaanu")
+
+
+        //  }))
+       
+</script>
