@@ -23,18 +23,30 @@
         <p>TYPES</p>
         <hr />
         <div id="filterOptions">
-          <div><p>Homestay</p></div>
-          <div><p>Villas</p></div>
-          <div><p>Hotel</p></div>
-          <div><p>Resort</p></div>
-          <div><p>Serviced Apartment</p></div>
-          <div><p>Farm</p></div>
-          <div><p>AC</p></div>
-          <div><p>Wifi/Internet</p></div>
+          <div><p id="homestay">Homestay</p></div>
+          <div><p id="villas">Villas</p></div>
+          <div><p id="hotel">Hotel</p></div>
+          <div><p id="resort">Resort</p></div>
+          <div><p id="serviced_appartment">Serviced Apartment</p></div>
+          <div><p id="farm">Farm</p></div>
         </div>
       </div>
       <!-- Holiday homes view section -->
-      <div id="displayHolidayHomes"></div>
+      <div id="HHomescontainer">
+        <p id="cityHH" style="font-size: 20px;"></p>
+        <div id="displayHolidayHomesMain">
+          <button id="HHButtonLeft">&#10094;</button>
+          <div id="displayHHDataSlide">
+            <!-- appended data here -->
+          </div>
+          <button id="HHButtonRight">&#10095;</button>
+        </div>
+      </div>
+      <!-- map by city -->
+      <div id="map">
+        <p style="font-size: 20px;">Explore On The Map</p>
+        <div id="displayMap"></div>
+      </div>
     </div>
   </body>
 </html>

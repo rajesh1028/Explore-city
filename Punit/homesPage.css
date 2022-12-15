@@ -5,7 +5,6 @@
 }
 /* cityHomes CSS */
 #CityHHomes {
-  border: 1px solid red;
   width: 100%;
   margin: auto;
   text-align: center;
@@ -24,7 +23,6 @@
 
 /* Filter CSS */
 #filter {
-  border: 1px solid red;
   width: 95%;
   margin: auto;
   margin-top: 60px;
@@ -58,19 +56,70 @@
   text-decoration-thickness: 1px;
   color: rgb(30, 135, 240);
 }
-
-
-
+/* HH */
+#HHomescontainer {
+  width: 95%;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+}
+#HHomescontainer button {
+  position: absolute;
+  font-size: 35px;
+  font-weight: lighter;
+  color: rgb(143, 143, 143);
+  cursor: pointer;
+  border: 0px;
+}
+#HHomescontainer button:first-child {
+  left: -32px;
+  top: 45%;
+}
+#HHomescontainer button:last-child {
+  right: -32px;
+  bottom: 45%;
+}
+#displayHHDataSlide {
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 40px;
+  overflow-x: hidden;
+}
+#displayHHDataSlide img {
+  aspect-ratio: 1/1;
+  width: 333px;
+  height: 200px;
+}
+.HHslideDataDiv div {
+  margin: 10px;
+}
+.HHslideDataDiv div:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(30, 135, 240);
+  text-decoration-thickness: 0.2px;
+  cursor: pointer;
+}
+.HHslideDataDiv {
+  margin-top: 30px;
+}
+#map{
+  width: 95%;
+  margin: auto;
+  margin-top: 50px;
+}
+#displayMap{
+  margin: 20px;
+}
 /* ..................................................................Media Query......................................... */
 /* medium screen */
-@media screen and (min-width: 651px)and (max-width: 960px){
+@media screen and (min-width: 651px) and (max-width: 960px) {
   #filterOptions {
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /* small screen */
-@media screen and (max-width: 650px){
+@media screen and (max-width: 650px) {
   #filterOptions {
-  grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
