@@ -5,6 +5,7 @@
   margin: auto;
 }
 #slide {
+
   display: flex;
   margin: auto;
   justify-content: space-between;
