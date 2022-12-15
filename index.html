@@ -12,13 +12,34 @@
     <link rel="stylesheet" href="./Abhijeet/Styles/footer.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="./styles/style_PR.css">
+    <link rel="stylesheet" href="./Abhijeet/Styles/dropdown_btn.css">
 </head>
 <body>
     <div id="navbar">
         <div id="website-logo"><i><b>Explorecity</b></i></div>
         <div id="nav-buttons">
-            <img id="sigin_btn" src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png" alt="SignIn">
+            <div class="dropdown">
+                <img onclick="myFunction()" class="dropbtn" id="sigin_btn" src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png" alt="SignIn">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Sign- In</a>
+                    <a href="#">Sign- Up</a>
+                  </div>
+            </div>
             <button>INR</button>
+            <!-- <div class="dropdown">
+                <button onclick="myFunctionINR()" class="dropbtn" id="inr_btn">INR</button>
+                <div id="myDropdown" class="dropdown-contentinr">
+                    <a href="#">INR</a>
+                    <a href="#">AED</a>
+                    <a href="#">USD</a>
+                    <a href="#">EU</a>
+                    <a href="#">AUD</a>
+                    <a href="#">CAD</a>
+                    <a href="#">BRL</a>
+                    <a href="#">NZD</a>
+                    <a href="#">PLN</a>
+                  </div>
+            </div> -->
             <img id="menu_btn" src="https://icon-library.com/images/three-bar-menu-icon/three-bar-menu-icon-3.jpg" alt="Menu">
 
         </div>
@@ -552,10 +573,10 @@
 </body>
 </html>
 
-<script src="./Abhijeet/Scripts/index.js" type="module"></script>
 <script src="./Abhijeet/Scripts/index_fun.js"></script>
 <script src="../Abhijeet/Scripts/admin_Btn_Navbar.js"></script>
 <script src="../Abhijeet/Scripts/footer.js"></script>
 <!-- Crousel -->
 <script src="../Abhijeet/Scripts/crousel.js"></script>
 <script src="../Abhijeet/Scripts/crousel_idea.js"></script>
+<script src="./Abhijeet/Scripts/index.js"></script>
