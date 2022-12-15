@@ -1,0 +1,41 @@
+
+  #navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(39,39,38);
+    color: white;
+  }
+
+  #website-logo{
+    font-size: 50px;
+    /* border: 1px solid white; */
+    width: 18%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  #nav-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 1px solid white; */
+    text-align: center;
+    width: 15%;
+  }
+  #nav-buttons > button {
+    font-size: 30px;
+    padding: 15px;
+    margin: 10px auto;
+    background-color:rgb(39,39,38);
+    color: white;
+    border: 0px;
+  }
+  #menu_btn{
+    height: 50px;
+    width: 50px;
+    margin: auto;
+  }
+  #sigin_btn{
+    height: 50px;
+    width: 50px;
+    margin: auto;
+  }
