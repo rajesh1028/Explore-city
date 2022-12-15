@@ -27,6 +27,15 @@
         #box>p{
             font-size: 30px;
         }
+
+        #display_image{
+            margin-top: 20px;
+            width: 200px;
+            height: 150px;
+            border: 1px solid black;
+            background-position: center;
+            background-size: cover;
+        }
        
     </style>
 </head>
@@ -35,23 +44,49 @@
         <p>Please upload good quality photos</p>
         <hr>
         <div id="mid">
+            <p>External/Common Area/Amenities Photos</p>
             <div>
-             <p>External/Common Area/Amenities Photos</p>
-             <input type="image">
+             <input type="file" id="image_input" accept="image/png, image/jpg">
+                <div id="display_image"></div>
             </div>
             
-            <div>
+            <!-- <div>
              <p>Photos For villa</p>
-             <input type="image">
-            </div>
+             <input type="file">
+            </div> -->
 
             
         </div>
         <hr>
         <div id="bottom">
-            <button>PREVIOUS</button>
-            <button>NEXT</button>
+            <button id="previous">PREVIOUS</button>
+            <button id="next">NEXT</button>
         </div>
     </div>
 </body>
 </html>
+<script>
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="5.html";
+    })
+
+    let next=document.getElementById("next");
+    next.addEventListener("click",()=>{
+        window.location.href="7.html";
+    })
+
+    const image_input = document.querySelector("#image_input");
+    var uploaded_image = "";
+
+    image_input.addEventListener("change", function(){
+        const reader = new FileReader();
+        reader.addEventListener("load", ()=>{
+            uploaded_image = reader.result;
+            sessionStorage.setItem( "image_url",JSON.stringify(reader.result));
+            document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+        })
+        reader.readAsDataURL(this.files[0]);
+    
+    })
+</script>

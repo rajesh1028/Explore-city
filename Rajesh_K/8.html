@@ -27,7 +27,21 @@
         #box>p{
             font-size: 30px;
         }
-       
+        input{
+            width: 200px;
+            height: 30px;
+            padding: 5px;
+            margin: 15px;
+            padding-left: 10px;
+        }
+        #image{
+            margin-top: 20px;
+            width: 200px;
+            height: 150px;
+            border: 1px solid black;
+            background-position: center;
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
@@ -36,9 +50,9 @@
         <hr>
         <div id="mid">
             <p>1 Listing will be created with following information.</p>
-            <div id="mid-1">
+            <!-- <div id="mid-1">
                 <p>Title: (Please edit the title as you deem fit.)</p>
-                <input type="text">
+                <input type="text" id="title">;
             </div>
             <hr>
             <div id="mid-2">
@@ -50,13 +64,65 @@
                 <input type="text">
                 <input type="text">
                 <input type="text">
-            </div>
+            </div> -->
         </div>
         <hr>
         <div id="bottom">
-            <button>PREVIOUS</button>
-            <button>UPLOAD</button>
+            <button id="previous">PREVIOUS</button>
+            <button id="upload">UPLOAD</button>
         </div>
     </div>
 </body>
 </html>
+<script>
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="7.html";
+    })
+
+    let upload=document.getElementById("upload");
+    upload.addEventListener("click",()=>{
+       // window.location.href="";  landing page
+       alert("data updated successfully");
+    })
+    
+
+    let title=document.getElementById("title");
+    let data=JSON.parse(sessionStorage.getItem("map-data"));
+    // console.log(data);
+    // console.log(data.accomArr[0])
+    let table=data.accomArr.map((elem,i)=>{
+        return `
+        <div class="mid-1">
+                <p>Title: (Please edit the title as you deem fit.)</p>
+                <input type="text" id="title" value="${data.accomArr[i]} in ${data.city}, ${data.state}">
+            </div>
+            <hr>
+            <div class="mid-2">
+                <input type="text" value="${data.city}, ${data.state}, ${data.country}">
+                <input type="text" value="${data.brand}">
+                <input type="text" value="${data.accomArr[i]}">
+                <input type="text" value="${data.property}">
+                <input type="text" value="${data.rates.meal}">
+                <input type="text" value="Max_Guests: ${data.accomArrData[i].max_guests}">
+                <input type="text" value="${data.accomArrData[i].available[0] || "happy"}">
+                <input type="text" value="${data.state}">
+            </div
+            <div id="image">
+            
+            <div>
+           
+            ${console.log(document.getElementById("image"))};
+            `
+           
+            
+            
+    });
+    
+    let mid = document.getElementById("mid");
+    mid.innerHTML=table.join("");
+
+    //document.querySelector("#image").style.backgroundImage = `url(${JSON.parse(sessionStorage.getItem("image_url"))})`
+
+
+</script>

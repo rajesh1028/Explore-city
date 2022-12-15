@@ -96,8 +96,8 @@
             </div>
             <hr>
             <div id="bottom">
-                <button>PREVIOUS</button>
-                <input type="submit" value="NEXT" id="submit">
+                <button id="previous">PREVIOUS</button>
+                <button id="next">NEXT</button>
             </div>
             
         </form>
@@ -105,14 +105,23 @@
 </body>
 </html>
 <script>
-    let ans=document.getElementById("options");
-    ans.addEventListener("submit",function(e){
+    let ans=document.getElementById("next");
+    ans.addEventListener("click",function(e){
         e.preventDefault();
     let selected=document.querySelector('input[type="radio"]:checked')
     if(selected==null){
         alert("Choose an option")
     }else{
         alert("You have successfully chosen "+selected.value)
+        let mapData=JSON.parse(sessionStorage.getItem("map-data"));
+        mapData.property=selected.value;
+        sessionStorage.setItem("map-data", JSON.stringify(mapData));
+        window.location.href="3.html";
     } 
+    });
+    let next=document.getElementById("previous");
+    next.addEventListener("click",(e)=>{
+        e.preventDefault();
+        window.location.href="1.html";
     })
 </script>

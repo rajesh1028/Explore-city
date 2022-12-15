@@ -44,6 +44,11 @@
             width: 80%;
             padding-left: 10px;
         }
+        #box #add{
+            font-size: medium;
+            margin-left: 1%;
+            margin-bottom: 1.5%;
+        }
        
     </style>
 </head>
@@ -53,21 +58,63 @@
         <hr>
         <div id="mid">
             <p>For example Standard Room, Deluxe Villa, 2 Bedroom Apartment, 3BHK Bungalow With Private Pool etc</p>
-            <div id="first">Type 1 <br>
+            <div id="first" class="types">Type 1 <br>
                 <input type="text">
             </div>
-            <div>Type 2 <br>
+            <div class="types">Type 2 <br>
                 <input type="text">
             </div>
-            <div>Type 3 <br>
+            <div class="types">Type 3 <br>
                 <input type="text">
             </div>
         </div>
+        <p id="add"><u>Add more</u></p>
         <hr>
         <div id="bottom">
-            <button>PREVIOUS</button>
-            <button>NEXT</button>
+            <button id="previous">PREVIOUS</button>
+            <button id="next">NEXT</button>
         </div>
     </div>
 </body>
 </html>
+<script>
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="3.html";
+    })
+
+    let next=document.getElementById("next");
+    next.addEventListener("click",()=>{
+        let boxes=document.querySelectorAll(".types");
+            let accomArr=[];
+            for(let j=0;j<boxes.length;j++){
+                if(boxes[j].children[1].value){
+                    accomArr.push(boxes[j].children[1].value);
+                }
+            }
+            if(accomArr.length>1){
+                let mapData=JSON.parse(sessionStorage.getItem("map-data"));
+                mapData.accomArr=accomArr;
+                sessionStorage.setItem("map-data",JSON.stringify(mapData));
+                window.location.href="5.html";
+            }else{
+                alert("Kindly fill atleast two columns");
+            }
+        
+    })
+
+    let i=4;
+    let add=document.getElementById("add");
+        add.addEventListener("click", ()=>{
+            var mid=document.getElementById("mid");
+            let div=document.createElement("div");
+            div.setAttribute("class","types")
+            let br=document.createElement("br");
+            let text=`Type ${i}`;
+            let input=document.createElement("input");
+            i++;
+            div.append(text,br,input);
+            mid.append(div);
+        })
+
+</script>
