@@ -55,15 +55,11 @@
                 <hr>
                 <div>
                    <p>Weekday Rate (Mon to Thu)</p>
-                   <input type="text" name="" id="">
+                   <input type="text" name="" id="weekday">
                 </div>
                 <div>
                     <p>Weekend Rate (Fri to Sun)</p>
-                    <input type="text" name="" id="">
-                </div>
-                <div>
-                    <p>Rates Valid For Guests</p>
-                    <input type="number" name="" id="" value="1">
+                    <input type="text" name="" id="weekend">
                 </div>
                 <div>
                     <p>Meal Plan</p>
@@ -89,9 +85,39 @@
         </div>
         <hr>
         <div id="bottom">
-            <button>PREVIOUS</button>
-            <button>NEXT</button>
+            <button id="previous">PREVIOUS</button>
+            <button id="next">NEXT</button>
         </div>
     </div>
 </body>
 </html>
+<script>
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="6.html";
+    })
+
+    let next=document.getElementById("next");
+    next.addEventListener("click",()=>{
+
+        let data=JSON.parse(sessionStorage.getItem("map-data"));
+
+        let currency=document.getElementById("currency").value;
+        let weekday=document.getElementById("weekday").value;
+        let weekend=document.getElementById("weekend").value;
+        let meal=document.getElementById("meal").value;
+        let policy=document.getElementById("policy").value;
+
+        let rates={};
+        rates.currency=currency;
+        rates.weekday_rate=weekday;
+        rates.weekend_rate=weekend;
+        rates.meal=meal;
+        rates.policy=policy;
+
+        data["rates"]=rates;
+        sessionStorage.setItem("map-data", JSON.stringify(data));
+        window.location.href="8.html";
+    })
+
+</script>

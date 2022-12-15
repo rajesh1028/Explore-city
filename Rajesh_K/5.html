@@ -37,11 +37,98 @@
         <div id="mid">
             <!-- data to be created -->
         </div>
-        <hr>
+
         <div id="bottom">
-            <button>PREVIOUS</button>
-            <button>NEXT</button>
+            <button id="previous">PREVIOUS</button>
+            <button id="next">NEXT</button>
         </div>
     </div>
 </body>
 </html>
+<script>
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="4.html";
+    })
+
+    let next=document.getElementById("next");
+    next.addEventListener("click",()=>{
+        let data=JSON.parse(sessionStorage.getItem("map-data"));
+        let arrData=data.accomArr.map((elem,i)=>{
+            let obj={};
+            let divid=document.querySelectorAll(".create")[i];
+            obj["type"]  = divid.children[2].value;
+            obj["numberofproperty"] = divid.children[6].value;
+            obj["max_guests"] = divid.children[10].value;
+            let available=[];
+            if(divid.children[14].checked) available.push(divid.children[14].value);
+            if(divid.children[16].checked) available.push(divid.children[16].value);
+            if(divid.children[18].checked) available.push(divid.children[18].value);
+            if(divid.children[20].checked) available.push(divid.children[20].value);
+            if(divid.children[22].checked) available.push(divid.children[22].value);
+            obj["available"]=available;
+            return obj;
+        });
+        data["accomArrData"]=arrData;
+        sessionStorage.setItem("map-data",JSON.stringify(data));
+        
+        window.location.href="6.html";
+    })
+
+    function renderData(){
+        let data=JSON.parse(sessionStorage.getItem("map-data"));
+        let mid=document.getElementById("mid");
+        let arr=[];
+        for(let i=0;i<data.accomArr.length;i++){
+            arr.push(createData(i,data))
+        }
+        mid.innerHTML=arr.join(""); 
+        
+        // -------------------------------
+        let selectValue = document.querySelectorAll(".selectValue");
+        let quantity    = document.querySelectorAll("#quantity");
+        let guests      = document.querySelectorAll("#guests");
+        let essentials  = document.querySelectorAll(".essential");
+        
+        
+    }
+    renderData();
+
+    function createData(i,data){
+        return `
+        <div class="create">
+           ${data.accomArr[i]}
+           <hr>
+            <p>Type Of Accomodation</p>
+            <select name="accomodation" class="selectValue">
+                <option value="room" class="accomodation">Room</option>
+                <option value="studio" class="accomodation">Studio</option>
+                <option value="villa" class="accomodation">Villa</option>
+                <option value="apartment" class="accomodation">Apartment</option>
+                <option value="tent" class="accomodation">Tent</option>
+            </select><br><br>
+            <p>How many ${data.accomArr[i]} do you have ?</p>
+                <input type="number" max="30" min="1" value="1" id="quantity"><br><br>
+            <p>Max Guests In Each ${data.accomArr[i]} </p>
+                <input type="number" max="30" min="1" value="1" id="guests"><br><br>
+            <p>Select whats applicable for ${data.accomArr[i]} </p>
+
+            <input type="checkbox" class="essential" value="kitchen">
+            <label for="kitchen">Kitchen</label>
+
+            <input type="checkbox" class="essential" value="tv">
+            <label for="tv">TV</label>
+
+            <input type="checkbox" class="essential" value="microwave">
+            <label for="microwave">Microwave</label>
+
+            <input type="checkbox" class="essential" value="bathtub">
+            <label for="bathtub">Bathtub</label>
+
+            <input type="checkbox" class="essential" value="ac">
+            <label for="ac">AC</label>
+
+            <hr>
+        </div> `
+    }
+</script>
