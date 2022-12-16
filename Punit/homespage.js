@@ -13,41 +13,44 @@ async function fetcthHomesData() {
 }
 fetcthHomesData();
 // filter data function
+let filterByCityData;
 function filterDataByCity(data) {
-  let filterByCityData = data.filter((elem) => {
+  filterByCityData = data.filter((elem) => {
     return elem.city == cityName;
   });
-  function filterByType(filterValue) {
-    filterByCityData = filterByCityData.filter((elem) => {
-      return elem.type_of_property == filterValue;
-    });
-  }
   showCityNameAndResult(filterByCityData.length);
   displayData(filterByCityData);
 }
 
 // filter by type function
 document.querySelector("#homestay").addEventListener("click", function () {
-  filterByType("homestay");
+  filterByType("Homestay");
 });
 document.querySelector("#villas").addEventListener("click", function () {
-  filterByType("villas");
+  filterByType("Villa");
 });
 document.querySelector("#hotel").addEventListener("click", function () {
-  filterByType("hotel");
+  filterByType("Hotel");
 });
 document.querySelector("#resort").addEventListener("click", function () {
-  filterByType("resort");
+  filterByType("Resort");
 });
 document
   .querySelector("#serviced_appartment")
   .addEventListener("click", function () {
-    filterByType("serviced appartment");
+    filterByType("Serviced Apartment");
   });
 document.querySelector("#farm").addEventListener("click", function () {
-  filterByType("farm");
+  filterByType("Farm");
 });
-
+function filterByType(filterValue) {
+  console.log(filterByCityData);
+  filterByTypeData = filterByCityData.filter((elem) => {
+    return elem.type_of_property == filterValue;
+  });
+  showCityNameAndResult(filterByTypeData.length);
+  displayData(filterByTypeData);
+}
 // Showing details in top section ciy name and total result and in Holiday Homes section
 
 let appendcityNameAndResult = document.querySelector("#CityHHomes");
@@ -136,3 +139,31 @@ mapDiv.innerHTML = `
               }
             </style>
           </div>`;
+
+let faqsMain = document.querySelector("#faqsMain");
+faqsMain.innerHTML = `
+          <p style="color: rgb(69, 69, 69)">
+            Can I get a holiday home with swimming pool in ${DisplaycityName}?
+          </p>
+          <p style="font-weight: lighter; color: rgb(96, 96, 96)">
+            Yes. We have close to 197 holiday homes with swimming pool in ${DisplaycityName}.
+            You can also choose a villa or bungalow with a swimming pool. Each
+            vacation rental will have its own swimming pool policies & timings
+            though. Make sure you talk to the property manager or the owner when
+            you make a reservation
+          </p>
+          <p style="color: rgb(69, 69, 69)">
+            Can I get any accommodation in ${DisplaycityName} if I am travelling with my family or a group of friends?
+          </p>
+          <p style="font-weight: lighter; color: rgb(96, 96, 96)">
+            You will have to choose number of bedrooms depending on the group size. 
+            You can go for any of the 91 Apartments, 83 Villas. You can go for 46 1BHK, 
+            56 2BHKS, 46 3BHKS, 24 4BHKS, 9 5BHKS holiday homes
+          </p>
+          <p style="color: rgb(69, 69, 69)">
+            What are the different types of holiday homes I can get in ${DisplaycityName}?
+          </p>
+          <p style="font-weight: lighter; color: rgb(96, 96, 96)">
+            ExploreCities has different types of holiday homes you can choose from in ${DisplaycityName}. 
+            We have 91 Apartments, 5 Cottages, 10 Homestays, 28 Resorts, 74 Rooms, 83 Villas
+          </p>`;
