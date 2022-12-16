@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-style: sans-serif;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/Pimal2-1.2d5d237dbd32.jpg") ;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    /* padding-top: 30px; */
+}
+.form-box{
+    width:380px;
+    height:500px;
+    position: relative;
+    margin:7% auto;
+    background: #fff;
+    padding:5px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.buttom-box{
+    width:220px;
+    margin:35px auto;
+    position:relative;
+    box-shadow: 0 0 20px 9px #3324ff44;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border:0;
+    outline:none;
+    position: relative;
+    /* color:white; */
+}
+#BTN{
+    top: 0;
+    left:0;
+    position :absolute;
+    width:110px;
+    height:100%;
+    background:linear-gradient(to right, #41d8f6, #4444f9);
+    border-radius: 30px;
+    transition:0.5s;
+}
+.input-group{
+    top:180px ;
+    position: absolute;
+    width:280px;
+    transition: 0.5s;
+}
+.form-box{
+    /* margin-top: 20px; */
+  
+}
+form>div{
+    margin-bottom: 20px;
+}
+form>div>input{
+    height: 35px;
+   width: fit-content;
+   outline: none;
+   border-top:none ;
+   border-left: none;
+   border-right:none ;
+}
+form>.form-div>input{
+    width: 100%;
+}
+form>.form-div>p{
+   font-size: 12px;
+   color: rgb(82, 81, 81);
+}
+form>.userName>input{
+    width: 45%;
+    
+}
+#LastName{
+   margin-left: 10px;
+}
+
+.butt{
+    width: fit-content;
+    margin: auto;
+   
+} 
+
+.butt>input{
+    width: 100px;
+    background:linear-gradient(to right, #41d8f6, #4444f9);
+    border: none;
+    color: black;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 10px;
+}
+input::placeholder{
+    letter-spacing: 2px;
+}
+
+#signup{
+   left:50px;
+   /* margin-right: 0px; */
+}
+#sign{
+    left:450px;
+}
