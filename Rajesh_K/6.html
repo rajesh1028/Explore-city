@@ -66,6 +66,8 @@
 </body>
 </html>
 <script>
+
+    let key=[];
     let previous=document.getElementById("previous");
     previous.addEventListener("click",()=>{
         window.location.href="5.html";
@@ -73,20 +75,59 @@
 
     let next=document.getElementById("next");
     next.addEventListener("click",()=>{
+        let data=JSON.parse(sessionStorage.getItem("map-data"));
+        data["image_url"]=key;
+        sessionStorage.setItem("map-data", JSON.stringify(data));
         window.location.href="7.html";
     })
 
-    const image_input = document.querySelector("#image_input");
-    var uploaded_image = "";
+    let map=JSON.parse(sessionStorage.getItem("map-data"));
+    //console.log(map);
 
-    image_input.addEventListener("change", function(){
-        const reader = new FileReader();
-        reader.addEventListener("load", ()=>{
-            uploaded_image = reader.result;
-            sessionStorage.setItem( "image_url",JSON.stringify(reader.result));
-            document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+
+    function createElement(){
+      let mid = document.querySelector("#mid");
+      let res = map.accomArr.map((elem,i)=>{
+        return `
+            <p>External/Common Area/Amenities Photos</p>
+            <div>
+             <input type="file" id="image_input${i}" accept="image/png, image/jpg">
+                <div id="display_image${i}"></div>
+            </div><br>
+            <hr><br>
+            `
+      })
+
+      mid.innerHTML=res.join("");
+
+      map.accomArr.forEach((elem,i)=>{
+        const image_input = document.querySelector(`#image_input${i}`);
+        var uploaded_image = "";
+
+        image_input.addEventListener("change", function(){
+            
+            const reader = new FileReader();
+            reader.addEventListener("load", ()=>{
+                uploaded_image = reader.result;
+                key.push(reader.result);
+                document.querySelector(`#display_image${i}`).style.backgroundImage = `url(${uploaded_image})`;
+            })
+            reader.readAsDataURL(this.files[0]);
+            
         })
-        reader.readAsDataURL(this.files[0]);
-    
-    })
+      }) 
+
+      map.accomArr.forEach((elem,i)=>{
+        document.querySelector(`#display_image${i}`).style.border="1px solid black"
+        document.querySelector(`#display_image${i}`).style.width="200px"
+        document.querySelector(`#display_image${i}`).style.height="150px"
+        document.querySelector(`#display_image${i}`).style.margin="20px 0px 0px 0px"
+        document.querySelector(`#display_image${i}`).style.backgroundPosition="center"
+        document.querySelector(`#display_image${i}`).style.backgroundSize="cover"
+      })
+    }
+
+    createElement();
+
+
 </script>

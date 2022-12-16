@@ -58,14 +58,15 @@
             let obj={};
             let divid=document.querySelectorAll(".create")[i];
             obj["type"]  = divid.children[2].value;
-            obj["numberofproperty"] = divid.children[6].value;
-            obj["max_guests"] = divid.children[10].value;
+            obj["bathroom"] = divid.children[6].value;
+            obj["bedroom"] = divid.children[10].value;
+            obj["max_guests"] = divid.children[14].value;
             let available=[];
-            if(divid.children[14].checked) available.push(divid.children[14].value);
-            if(divid.children[16].checked) available.push(divid.children[16].value);
             if(divid.children[18].checked) available.push(divid.children[18].value);
             if(divid.children[20].checked) available.push(divid.children[20].value);
             if(divid.children[22].checked) available.push(divid.children[22].value);
+            if(divid.children[24].checked) available.push(divid.children[24].value);
+            if(divid.children[26].checked) available.push(divid.children[26].value);
             obj["available"]=available;
             return obj;
         });
@@ -86,7 +87,6 @@
         
         // -------------------------------
         let selectValue = document.querySelectorAll(".selectValue");
-        let quantity    = document.querySelectorAll("#quantity");
         let guests      = document.querySelectorAll("#guests");
         let essentials  = document.querySelectorAll(".essential");
         
@@ -107,8 +107,12 @@
                 <option value="apartment" class="accomodation">Apartment</option>
                 <option value="tent" class="accomodation">Tent</option>
             </select><br><br>
-            <p>How many ${data.accomArr[i]} do you have ?</p>
-                <input type="number" max="30" min="1" value="1" id="quantity"><br><br>
+            <p>How many bathroom do you have ?</p>
+                <input type="number" max="30" min="1" value="1" id="bathroom"><br><br>
+           
+            <p>How many bedroom do you have ?</p>
+                <input type="number" max="30" min="1" value="1" id="bedroom"><br><br>
+
             <p>Max Guests In Each ${data.accomArr[i]} </p>
                 <input type="number" max="30" min="1" value="1" id="guests"><br><br>
             <p>Select whats applicable for ${data.accomArr[i]} </p>
