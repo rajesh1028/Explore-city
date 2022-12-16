@@ -83,7 +83,10 @@
     let upload=document.getElementById("upload");
     upload.addEventListener("click",()=>{
        // window.location.href="";  landing page
+       let data=JSON.parse(sessionStorage.getItem("map-data"));
+       localStorage.setItem("data", JSON.stringify(data));
        alert("data updated successfully");
+       window.location.href="9.html";
     })
     
 
@@ -92,6 +95,8 @@
     // console.log(data);
     // console.log(data.accomArr[0])
     let table=data.accomArr.map((elem,i)=>{
+        let data=JSON.parse(sessionStorage.getItem("map-data"));
+        //console.log(data);
         return `
         <div class="mid-1">
                 <p>Title: (Please edit the title as you deem fit.)</p>
@@ -109,10 +114,8 @@
                 <input type="text" value="${data.state}">
             </div
             <div id="image">
-            
+            <img height="300px" width="250px" src="${data["image_url"][i]}">
             <div>
-           
-            ${console.log(document.getElementById("image"))};
             `
            
             
@@ -121,8 +124,5 @@
     
     let mid = document.getElementById("mid");
     mid.innerHTML=table.join("");
-
-    //document.querySelector("#image").style.backgroundImage = `url(${JSON.parse(sessionStorage.getItem("image_url"))})`
-
 
 </script>
