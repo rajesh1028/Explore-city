@@ -72,7 +72,7 @@ function displayData(filteredData) {
     return `
             <div class="HHslideDataDiv">
               <img src="${elem.img_url}" alt="" />
-              <div>
+              <div class="HHSlideTextDiv">
                 <p style="color: rgb(143, 143, 143); margin-top: 5px; font-size: 12px;">Ref id #${
                   elem.refid
                 }</p>
@@ -94,6 +94,12 @@ function displayData(filteredData) {
   });
   filteredDataArr = filteredDataArr.join("");
   HHslideDiv.innerHTML = filteredDataArr;
+  let HHslideDataDiv = document.querySelectorAll(".HHslideDataDiv");
+  for (dataDiv of HHslideDataDiv) {
+    dataDiv.addEventListener("click", function () {
+      console.log("hi");
+    });
+  }
 }
 
 // slide button function
