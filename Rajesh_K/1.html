@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        #box{
+            width: 95%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            padding: 3%;
+        }
+        #box p{
+            margin-left: 3%;
+            font-size: 25px;
+        }
+        #box h4{
+            margin-left: 3%;
+            font-size: 18px;
+        }
+        #location{
+            display: flex;
+            flex-direction: column;
+            grid-gap: 30px;
+            font-size: large;
+        }
+        #location input, select{
+            width: 150px;
+        }
+        #next{
+            display: flex;
+            margin-left: 90%;
+            margin-top: 20px;
+            padding: 1% 2%;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            border: 0ch;
+            cursor: pointer;
+        }
+        .gmap_canvas {
+          overflow: hidden;
+          background: none !important;
+          height: 400px;
+          width: 70%;
+        }
+        #flex{
+            display: flex;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>Where is your property located? Mark the exact location on the map?</p>
+        <hr>
+        <h4>Search for a landmark near you and put the marker on your exact location
+        </h4>
+        <div id="flex">
+            <div class="gmap_canvas" id="gmap">
+                <!-- google map here -->
+               </div>
+               <div id="location">
+                   <label for="#">
+                        <b>Country</b> 
+                       <select name="country">
+                           <option value="india" id="country">INDIA</option>
+                       </select>
+                   </label>
+                   <label for="#">
+                        <b>State</b>
+                       <input type="text" id="state">
+                   </label>
+                   <label for="#">
+                       <b>City</b> 
+                       <input type="text" name="" id="city">
+                   </label>
+               </div>
+        </div>
+        
+        <hr>
+        <button id="next">NEXT</button>
+    </div>
+</body>
+</html>
+<script>
+    let cityData=document.querySelector("#city")
+    cityData.addEventListener("input", function(e){
+
+        let maps=document.querySelector("#gmap");
+        let data=e.target.value;
+        
+        maps.innerHTML = `
+        <iframe
+            width="60%"
+            height="350px"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=${data}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            ></iframe>
+            <a href="https://www.whatismyip-address.com/divi-discount/"></a><br>`
+
+    })
+
+    let stateData=document.querySelector("#state")
+    stateData.addEventListener("input", function(e){
+
+        let maps=document.querySelector("#gmap");
+        let data=e.target.value;
+        
+        maps.innerHTML = `
+        <iframe
+            width="60%"
+            height="350px"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=${data}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            ></iframe>
+            <a href="https://www.whatismyip-address.com/divi-discount/"></a><br>`
+
+    })
+
+    let maps=document.querySelector("#gmap");
+    let data="bangalore";
+    
+    maps.innerHTML = `
+    <iframe
+          width="90%"
+          height="350px"
+          id="gmap_canvas"
+          src="https://maps.google.com/maps?q=${data}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+        ></iframe>
+        <a href="https://www.whatismyip-address.com/divi-discount/"></a><br>`
+
+
+    let next=document.getElementById("next");
+    next.addEventListener("click",()=>{
+        let country=document.querySelector("#country").value;
+        let state=document.querySelector("#state").value;
+        let city=document.querySelector("#city").value;
+        let obj={}
+        obj.country=country;
+        obj.state=state;
+        obj.city=city;
+        if(obj.state!="" && obj.city!=""){
+            sessionStorage.setItem("map-data",JSON.stringify(obj));
+            window.location.href="2.html";
+        }else{
+            alert("Please fill the required fields")
+        }
+       
+    })
+</script>

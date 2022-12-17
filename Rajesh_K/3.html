@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+        button{
+            padding: 1% 2.5%;
+            border: 0ch;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+        #bottom{
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #box{
+            width: 90%;
+            margin: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 2%;
+            border-radius: 10px;
+        }
+        #box>p{
+            font-size: 30px;
+        }
+        #mid{
+            padding: 1.5%;
+        }
+        #mid>p{
+            font-size: 21px;
+        }
+        input{
+            height: 40px;
+            width: 85%;
+            padding-left: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>Does it have a brand name?</p>
+        <hr>
+        <div id="mid">
+            <p>Your brand name. This is optional. You can click next if you dont have one.</p>
+            <input type="text" name="brand" id="brand" placeholder="eg. Garden Homestay">    
+        </div>
+        <hr>
+        <div id="bottom">
+            <button id="previous">PREVIOUS</button>
+            <button id="next">NEXT</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="2.html";
+    })
+
+    let next=document.getElementById("next");
+    next.addEventListener("click",()=>{
+        let brand=document.getElementById("brand").value;
+        if(brand!=""){
+            let mapData=JSON.parse(sessionStorage.getItem("map-data"));
+            mapData.brand=brand;
+            sessionStorage.setItem("map-data", JSON.stringify(mapData));
+            window.location.href="4.html";
+        }else{
+            alert("Fill all the fields");
+        }
+        
+    })
+
+</script>

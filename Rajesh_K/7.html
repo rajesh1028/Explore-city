@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+<style>
+        #box{
+            width: 90%;
+            margin: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 2%;
+            border-radius: 10px;
+        }button{
+            padding: 1% 2.5%;
+            border: 0ch;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+        #bottom{
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #box>p{
+            font-size: 30px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>Specify default rates & the cancellation policy</p>
+        <hr>
+        <div id="mid">
+            <div id="one">
+                <h3>Which currency do you operate in?</h3>
+                <select name="currency" id="currency">
+                    <option value="INR">INR</option>
+                    <option value="AED">AED</option>
+                    <option value="AUD">AUD</option>
+                    <option value="JPY">JPY</option>
+                    <option value="EUR">EUR</option>
+                    <option value="DKK">DKK</option>
+                    <option value="CZK">CZK</option>
+                    <option value="CHF">CHF</option>
+                    <option value="CAD">CAD</option>
+                    <option value="BRL">BRL</option>
+                </select>
+            </div>
+            <div id="two">
+                <h3>Default Rates For Villa</h3>
+                <hr>
+                <div>
+                   <p>Weekday Rate (Mon to Thu)</p>
+                   <input type="text" name="" id="weekday">
+                </div>
+                <div>
+                    <p>Weekend Rate (Fri to Sun)</p>
+                    <input type="text" name="" id="weekend">
+                </div>
+                <div>
+                    <p>Meal Plan</p>
+                    <select name="meal" id="meal">
+                        <option value="European Plan">European Plan</option>
+                        <option value="Continental Plan">Continental Plan</option>
+                        <option value="Modified American Plan">Modified American Plan</option>
+                        <option value="All American Plan">All American Plan</option>
+                        <option value="AllInOne">Breakfast, Lunch, Dinner</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Cancellation Policy                    </p>
+                    <select name="policy" id="policy">
+                        <option value="Common">Common</option>
+                        <option value="Lenient">Lenient </option>
+                        <option value="Friendly">Friendly</option>
+                        <option value="Non-refundable">Non-refundable</option>
+                    </select>
+                </div>
+                
+            </div>
+        </div>
+        <hr>
+        <div id="bottom">
+            <button id="previous">PREVIOUS</button>
+            <button id="next">NEXT</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="6.html";
+    })
+
+    let next=document.getElementById("next");
+    next.addEventListener("click",()=>{
+
+        let data=JSON.parse(sessionStorage.getItem("map-data"));
+
+        let currency=document.getElementById("currency").value;
+        let weekday=document.getElementById("weekday").value;
+        let weekend=document.getElementById("weekend").value;
+        let meal=document.getElementById("meal").value;
+        let policy=document.getElementById("policy").value;
+
+        let rates={};
+        rates.currency=currency;
+        rates.weekday_rate=weekday;
+        rates.weekend_rate=weekend;
+        rates.meal=meal;
+        rates.policy=policy;
+
+        data["rates"]=rates;
+        sessionStorage.setItem("map-data", JSON.stringify(data));
+        window.location.href="8.html";
+    })
+
+</script>

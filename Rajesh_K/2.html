@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        #head{
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        #bottom{
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #container{
+           width: 90%;
+           margin: auto;
+           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+           padding: 3%;
+           border-radius: 10px;
+        }
+        #container>p{
+            font-size: 30px;
+        }
+        #submit, button{
+            padding: 1% 2.5%;
+            border: 0ch;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+       h3{
+        font-size: 20px;
+       }
+       label{
+        font-size: 18px;
+       }
+       input{
+        margin: 10px 0px;
+       }
+       .in{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 2%;
+        border-radius: 10px;
+       }
+       .inner{
+        margin: auto 5%;
+       }
+       hr{
+        margin: 2% 0px;
+       }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>What type of property do you have?</p>
+        <hr>
+        <form id="options">
+            <div id="head">
+                <div class="in">
+                    <h3>Select one of these if you have rooms that you rent out individually</h3>
+                    <input type="radio" name="property" id="resort" value="Resort">
+                    <label for="resort">Resort</label><br>
+                    <input type="radio" name="property" id="homestay" value="Homestay">
+                    <label for="homestay">Homestay</label><br>
+                    <input type="radio" name="property" id="farm" value="Farm">
+                    <label for="farm">Farm</label><br>
+                    <input type="radio" name="property" id="hotel" value="Hotel">
+                    <label for="hotel">Hotel</label><br>
+                    <input type="radio" name="property" id="apartment" value="Apartment">
+                    <label for="apartment">Apartment</label><br><br>
+                </div>
+
+                <div class="inner">
+                    <h2>OR</h2>
+                </div>
+                
+                <div class="in">
+                    <h3>Select one of these if you rent out entire properties of the types below</h3>
+                    <input type="radio" name="property" id="studio" value="Studio">
+                    <label for="studio">Studio</label><br>
+                    <input type="radio" name="property" id="villa" value="Villa">
+                    <label for="villa">Villa</label><br>
+                    <input type="radio" name="property" id="cottage" value="Cottage">
+                    <label for="cottage">Cottage</label><br>
+                    <input type="radio" name="property" id="caravan" value="Caravan">
+                    <label for="caravan">Caravan</label><br>
+                    <input type="radio" name="property" id="houseboat" value="Houseboat">
+                    <label for="houseboat">Houseboat</label><br><br>
+                </div>
+                
+            </div>
+            <hr>
+            <div id="bottom">
+                <button id="previous">PREVIOUS</button>
+                <button id="next">NEXT</button>
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    let ans=document.getElementById("next");
+    ans.addEventListener("click",function(e){
+        e.preventDefault();
+    let selected=document.querySelector('input[type="radio"]:checked')
+    if(selected==null){
+        alert("Choose an option")
+    }else{
+        alert("You have successfully chosen "+selected.value)
+        let mapData=JSON.parse(sessionStorage.getItem("map-data"));
+        mapData.property=selected.value;
+        sessionStorage.setItem("map-data", JSON.stringify(mapData));
+        window.location.href="3.html";
+    } 
+    });
+    let next=document.getElementById("previous");
+    next.addEventListener("click",(e)=>{
+        e.preventDefault();
+        window.location.href="1.html";
+    })
+</script>

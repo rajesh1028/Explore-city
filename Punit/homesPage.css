@@ -1,0 +1,139 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0%;
+  padding: 0%;
+}
+/* cityHomes CSS */
+#CityHHomes {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+#CityHHomes > p:nth-child(1) {
+  font-size: 25px;
+  font-weight: lighter;
+  margin: 20px;
+}
+#CityHHomes > p:nth-child(2) {
+  color: rgb(106, 108, 109);
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 20px;
+}
+
+/* Filter CSS */
+#filter {
+  width: 95%;
+  margin: auto;
+  margin-top: 60px;
+}
+
+#filter > hr {
+  color: rgb(224, 224, 224);
+  border-style: solid;
+}
+#filter > p {
+  font-weight: lighter;
+  text-decoration: underline;
+  text-decoration-color: rgb(30, 135, 240);
+  width: 60px;
+}
+#filterOptions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+#filterOptions > div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+#filterOptions > div > p {
+  font-weight: lighter;
+}
+#filterOptions > div > p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  color: rgb(30, 135, 240);
+}
+/* HH */
+#HHomescontainer {
+  width: 95%;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+}
+#HHomescontainer button {
+  position: absolute;
+  font-size: 35px;
+  font-weight: lighter;
+  color: rgb(143, 143, 143);
+  cursor: pointer;
+  border: 0px;
+}
+#HHomescontainer button:first-child {
+  left: -32px;
+  top: 45%;
+}
+#HHomescontainer button:last-child {
+  right: -32px;
+  bottom: 45%;
+}
+#displayHHDataSlide {
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 40px;
+  overflow-x: hidden;
+}
+#displayHHDataSlide img {
+  aspect-ratio: 1/1;
+  width: 333px;
+  height: 200px;
+}
+.HHslideDataDiv div {
+  margin: 10px;
+}
+.HHslideDataDiv div:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(30, 135, 240);
+  text-decoration-thickness: 0.2px;
+  cursor: pointer;
+}
+.HHslideDataDiv {
+  margin-top: 30px;
+}
+#map {
+  width: 95%;
+  margin: auto;
+  margin-top: 50px;
+}
+#displayMap {
+  margin: 20px;
+}
+/* faqs section */
+#faqs {
+  width: 95%;
+  margin: auto;
+  margin-top: 60px;
+}
+#faqs>div{
+  width: 98%;
+  margin: auto;
+  margin-top: 10px;
+}
+#faqs>div>p{
+  margin-top: 7px;
+}
+/* ..................................................................Media Query......................................... */
+/* medium screen */
+@media screen and (min-width: 651px) and (max-width: 960px) {
+  #filterOptions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* small screen */
+@media screen and (max-width: 650px) {
+  #filterOptions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

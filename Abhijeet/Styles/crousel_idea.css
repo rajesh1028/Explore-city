@@ -1,0 +1,125 @@
+#container_crousle_idea {
+  display: flex;
+  overflow: hidden;
+  width: 98%;
+  margin: auto;
+}
+#slide_idea {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+.slider_content {
+  width: 220px;
+  height: 160px;
+  border: 2px solid transparent;
+  margin: 30px;
+  margin-left: 32px;
+}
+#goa_idea {
+  position: relative;
+}
+#goa_idea ::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/goa-11.f1c86735cec4.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  z-index: -1;
+}
+
+#kerala_idea {
+  position: relative;
+}
+#kerala_idea ::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/kerala-18.c082ce41a521.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.9;
+  z-index: -1;
+}
+#lonavala_idea {
+  position: relative;
+}
+#lonavala_idea ::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/lonavala-2293.ab3b797cddf6.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+  z-index: -1;
+}
+#galle_idea {
+  position: relative;
+}
+#galle_idea ::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/galle-27739.4e9874b7f375.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
+  z-index: -1;
+}
+#koh-samui_idea {
+  position: relative;
+}
+#koh-samui_idea ::before {
+  content: "";
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(4, 4, 4, 0.7)),
+    url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/koh-samui-5119.82e8a6c9cf8b.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+  z-index: -1;
+}
+.slider_content > h1 {
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+.slider_content > p {
+  text-align: center;
+  color: white;
+  margin-top: -10px;
+}
+
+.slider_buttons > #btnprev_ideas > span {
+  position: absolute;
+  top: 255%;
+  font-size: 40px;
+  color: black;
+}
+
+.slider_buttons > #btnnext_ideas > span {
+  position: absolute;
+  top: 255%;
+  font-size: 40px;
+  right: 2%;
+  color: black;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9</title>
+    <style>
+        h2{
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        #submit{
+            width: 30%;
+            margin: 10% 34%;
+        }
+    </style>
+</head>
+<body>
+    <h2>I hereby declare that the above mentioned details are true by clicking on the submit button!!!</h2>
+    <button id="submit"><h3>submit</h3></button>
+</body>
+</html>
+
+<script>
+
+    let button=document.querySelector("#submit");
+    button.addEventListener("click",function(){
+    let data=JSON.parse(localStorage.getItem("data"));
+    //console.log(data);
+    let obj={
+        "title" : data.brand,
+        "country" : data.country,
+        "city" : data.city,
+        "costpernight" : data.rates.weekday_rate,
+        "bathroom" : data.accomArrData[0].bathroom,
+        "bedroom" :  data.accomArrData[0].bedroom,
+        "maxguests" : data.accomArrData[0].max_guests,
+        "type_of_property" : data.accomArr[0]
+
+    }
+    for(let i=0;i<data.image_url.length;i++){
+        obj[`img_url${i+1}`]=data.image_url[i];
+    }
+
+    let Ammenities=[];
+    for(let i=0;i<data.accomArrData.length;i++){
+        for(let j=0;j<data.accomArrData[i].available.length;j++){
+            Ammenities.push(data.accomArrData[i].available[j]);
+        }
+    }
+    obj["Ammenities"]=Ammenities;
+    localStorage.setItem("addData", JSON.stringify(obj));
+    })
+    
+    
+    
+</script>

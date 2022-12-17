@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+    <style>
+        #box{
+            width: 90%;
+            margin: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 2%;
+            border-radius: 10px;
+        }button{
+            padding: 1% 2.5%;
+            border: 0ch;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+        #bottom{
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #box>p{
+            font-size: 30px;
+        }
+
+        #display_image{
+            margin-top: 20px;
+            width: 200px;
+            height: 150px;
+            border: 1px solid black;
+            background-position: center;
+            background-size: cover;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>Please upload good quality photos</p>
+        <hr>
+        <div id="mid">
+            <p>External/Common Area/Amenities Photos</p>
+            <div>
+             <input type="file" id="image_input" accept="image/png, image/jpg">
+                <div id="display_image"></div>
+            </div>
+            
+            <!-- <div>
+             <p>Photos For villa</p>
+             <input type="file">
+            </div> -->
+
+            
+        </div>
+        <hr>
+        <div id="bottom">
+            <button id="previous">PREVIOUS</button>
+            <button id="next">NEXT</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    let key=[];
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="5.html";
+    })
+
+    let next=document.getElementById("next");
+    next.addEventListener("click",()=>{
+        let data=JSON.parse(sessionStorage.getItem("map-data"));
+        data["image_url"]=key;
+        sessionStorage.setItem("map-data", JSON.stringify(data));
+        window.location.href="7.html";
+    })
+
+    let map=JSON.parse(sessionStorage.getItem("map-data"));
+    //console.log(map);
+
+
+    function createElement(){
+      let mid = document.querySelector("#mid");
+      let res = map.accomArr.map((elem,i)=>{
+        return `
+            <p>External/Common Area/Amenities Photos</p>
+            <div>
+             <input type="file" id="image_input${i}" accept="image/png, image/jpg">
+                <div id="display_image${i}"></div>
+            </div><br>
+            <hr><br>
+            `
+      })
+
+      mid.innerHTML=res.join("");
+
+      map.accomArr.forEach((elem,i)=>{
+        const image_input = document.querySelector(`#image_input${i}`);
+        var uploaded_image = "";
+
+        image_input.addEventListener("change", function(){
+            
+            const reader = new FileReader();
+            reader.addEventListener("load", ()=>{
+                uploaded_image = reader.result;
+                key.push(reader.result);
+                document.querySelector(`#display_image${i}`).style.backgroundImage = `url(${uploaded_image})`;
+            })
+            reader.readAsDataURL(this.files[0]);
+            
+        })
+      }) 
+
+      map.accomArr.forEach((elem,i)=>{
+        document.querySelector(`#display_image${i}`).style.border="1px solid black"
+        document.querySelector(`#display_image${i}`).style.width="200px"
+        document.querySelector(`#display_image${i}`).style.height="150px"
+        document.querySelector(`#display_image${i}`).style.margin="20px 0px 0px 0px"
+        document.querySelector(`#display_image${i}`).style.backgroundPosition="center"
+        document.querySelector(`#display_image${i}`).style.backgroundSize="cover"
+      })
+    }
+
+    createElement();
+
+
+</script>

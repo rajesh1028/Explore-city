@@ -1,0 +1,582 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explorecity | Home Page</title>
+    <link rel="stylesheet" href="./Abhijeet/Styles/index.css">
+    <link rel="stylesheet" href="./Abhijeet/Styles/nav.css">
+    <link rel="stylesheet" href="./Abhijeet/Styles/crousel.css" />
+    <link rel="stylesheet" href="./Abhijeet/Styles/crousel_idea.css" />
+    <link rel="stylesheet" href="./Abhijeet/Styles/footer.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./styles/style_PR.css">
+    <link rel="stylesheet" href="./Abhijeet/Styles/dropdown_btn.css">
+</head>
+<body>
+    <div id="navbar">
+        <div id="website-logo"><i><b>Explorecity</b></i></div>
+        <div id="nav-buttons">
+            <div class="dropdown">
+                <img onclick="myFunction()" class="dropbtn" id="sigin_btn" src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png" alt="SignIn">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Sign- In</a>
+                    <a href="#">Sign- Up</a>
+                  </div>
+            </div>
+            <button>INR</button>
+            <!-- <div class="dropdown">
+                <button onclick="myFunctionINR()" class="dropbtn" id="inr_btn">INR</button>
+                <div id="myDropdown" class="dropdown-contentinr">
+                    <a href="#">INR</a>
+                    <a href="#">AED</a>
+                    <a href="#">USD</a>
+                    <a href="#">EU</a>
+                    <a href="#">AUD</a>
+                    <a href="#">CAD</a>
+                    <a href="#">BRL</a>
+                    <a href="#">NZD</a>
+                    <a href="#">PLN</a>
+                  </div>
+            </div> -->
+            <img id="menu_btn" src="https://icon-library.com/images/three-bar-menu-icon/three-bar-menu-icon-3.jpg" alt="Menu">
+
+        </div>
+    </div>
+    <div id="search">
+        <div id="uppersection">
+            <div id="background">
+
+            </div>
+            <div id="heading">
+                <h1>Book <span>Hotels</span> Vacation Rentals</h1>
+                <h1 id="h1second">
+                    Top Holiday Homes - Villas, Apartments & Homestays
+                </h1>
+            </div>
+        </div>
+
+        <div id="lowersection">
+            <div id="locationinput">
+                <span class="material-symbols-outlined">Search</span>
+                <input type="text" id="location" placeholder="Location" list="city_dropdown" />
+                <datalist id="city_dropdown">
+                    <option value="Goa">
+                    <option value="Kerala">
+                    <option value="Lonavala">
+                    <option value="Galle">
+                    <option value="Pataya">
+                </datalist>
+            </div>
+
+            <div id="checkindiv">
+                <span class="material-symbols-outlined"> Login </span>
+                <input type="date" name="checkin" id="checkin" placeholder="Check-in" />
+            </div>
+
+            <div id="checkoutdiv">
+                <span class="material-symbols-outlined"> Logout </span>
+                <input type="date" name="checkout" id="checkout" placeholder="Check-out" />
+            </div>
+
+            <div id="guestdiv">
+                <input type="number" id="guest" placeholder="Select Guest" />
+            </div>
+
+            <button id="submit_search_button">SEARCH</button>
+        </div>
+    </div>
+
+    <div id="crousle_section">
+        <p class="heading_top_destination">Top Destinations</p>
+        <div id="container_crousle">
+            <div id="slide">
+                <div class="slider_content" id="goa_front">
+                    <h1>Goa</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="kerala_front">
+                    <h1>Kerala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="lonavala_front">
+                    <h1>Lonavala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="galle_front">
+                    <h1>Galle</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="koh-samui_front">
+                    <h1>Pataya</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <!--for iNFINTE SCROLL REPEATING VALUES above-->
+                <!--***********************************origina values****************************************-->
+                <div class="slider_content" id="goa">
+                    <h1>Goa</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="kerala">
+                    <h1>Kerala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="lonavala">
+                    <h1>Lonavala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="galle">
+                    <h1>Galle</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="koh-samui">
+                    <h1>Pataya</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <!--***********************************origina values****************************************-->
+                <!--for iNFINTE SCROLL REPEATING VALUES-->
+                <div class="slider_content" id="goa_back">
+                    <h1>Goa</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+
+                <div class="slider_content" id="kerala_back">
+                    <h1>Kerala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="lonavala_back">
+                    <h1>Lonavala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="galle_back">
+                    <h1>Galle</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider_buttons">
+            <p id="btnprev">
+                <span class="material-symbols-outlined"> chevron_left </span>
+            </p>
+            <p id="btnnext">
+                <span class="material-symbols-outlined"> chevron_right </span>
+            </p>
+        </div>
+    </div>
+
+    <div id="explorecity_owned">
+        <div id="explorecity_managed">
+            <div id="heading_explorecity_managed">
+                <p>Fully Managed Communities By explorecity</p>
+            </div>
+            <div id="fac_explorecity_managed">
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/housekeeper.svg" alt="" />
+                    <p>High Quality housekeeping</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/towel.svg" alt="" />
+                    <p>Comfortable Linen and Toiletries</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/bed.svg" alt="" />
+                    <p>Quality Furniture & Fittings</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/dinner.svg" alt="" />
+                    <p>Food Delivery Or Central Restaurant</p>
+                </div>
+            </div>
+        </div>
+        <div id="explorecity_grid">
+            <div>
+                <h3>Tata Rio De Goa</h3>
+                </h3>
+                <p>Dabolim, Goa</p>
+            </div>
+            <div>
+                <h3>Kenisha Holiday Homes</h3>
+                </h3>
+                <p>Pawasalwadi, Maharashtra</p>
+            </div>
+            <div>
+                <h3>White Villas Kasara</h3>
+                </h3>
+                <p>Kasara, Maharashtra</p>
+            </div>
+            <div>
+                <h3>White Villas Shahapur</h3>
+                <p>Shahapur, Maharashtra</p>
+            </div>
+            <div>
+                <h3>Puravankara Adora De Goa</h3>
+                </h3>
+                <p>Dabolim, Goa</p>
+            </div>
+            <div>
+                <h3>Umiya Serene</h3>
+                </h3>
+                <p>Nerul, Goa</p>
+            </div>
+            <div>
+                <h3>Oasis Alibaug</h3>
+                </h3>
+                <p>Alibag, Maharashtra</p>
+            </div>
+            <div>
+                <h3>Dreamz Shiroda</h3>
+                </h3>
+                <p>Shiroda, Maharashtra</p>
+            </div>
+            <div>
+                <h3>Pristine Bay Mahabalipuram</h3>
+                <p>Thenpattinam, Tamil Nadu</p>
+            </div>
+            <div>
+                <h3>Ampelon Chikkaballapur</h3>
+                </h3>
+                <p>Chikkaballapur, Karnataka</p>
+            </div>
+        </div>
+    </div>
+    <div id="opportunities">
+        <div class="invest_opportunity">
+            <div class="invest_heading">
+                <p>Holiday Home Investment Opportunities</p>
+            </div>
+            <div class="invest_img">
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg" alt="">
+                    <p>Low Cost High Appreciation</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/maids.svg" alt="">
+                    <p>Professionally Managed</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/give-money.svg" alt="">
+                    <p>Guaranteed To Produce Income</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/plan.svg" alt="">
+                    <p>We Designed Floor Plans</p>
+                </div>
+            </div>
+            <button>Explore Investment Opportunities</button>
+        </div>
+        <div class="invest_opportunity">
+            <div class="invest_heading">
+                <p>Are You A Holiday Home Owner/Manager?</p>
+            </div>
+            <div class="invest_img">
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/network.svg" alt="">
+                    <p>Get Bookings From 100+ Websites</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/layout.svg" alt="">
+                    <p>One Dashboard - Total Control</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/flash.svg" alt="">
+                    <p>Instant Book Or Request To Book</p>
+                </div>
+
+                <div>
+                    <img src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/smartphone-call.svg" alt="">
+                    <p>Both iOS & Android App Available.</p>
+                </div>
+            </div>
+            <button>List Your Property</button>
+        </div>
+    </div>
+    <div id="vacation_ideas">
+        <p class="heading_top_destination">Vacation Ideas</p>
+        <div id="container_crousle_idea">
+            <div id="slide_idea">
+                <div class="slider_content" id="goa_idea">
+                    <h1>Goa</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="kerala_idea">
+                    <h1>Kerala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="lonavala_idea">
+                    <h1>Lonavala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="galle_idea">
+                    <h1>Galle</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="koh-samui_idea">
+                    <h1>Koh-Samui</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <!--for iNFINTE SCROLL REPEATING VALUES above-->
+                <!--***********************************origina values****************************************-->
+                <div class="slider_content" id="goa_idea">
+                    <h1>Goa</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="kerala_idea">
+                    <h1>Kerala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="lonavala_idea">
+                    <h1>Lonavala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="galle_idea">
+                    <h1>Galle</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="koh-samui_idea">
+                    <h1>Koh-Samui</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <!--***********************************origina values****************************************-->
+                <!--for iNFINTE SCROLL REPEATING VALUES-->
+                <div class="slider_content" id="goa_idea">
+                    <h1>Goa</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+
+                <div class="slider_content" id="kerala_idea">
+                    <h1>Kerala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="lonavala_idea">
+                    <h1>Lonavala</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+                <div class="slider_content" id="galle_idea">
+                    <h1>Galle</h1>
+                    <p>Vacation Rentals</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider_buttons">
+            <p id="btnprev_ideas">
+                <span class="material-symbols-outlined"> chevron_left </span>
+            </p>
+            <p id="btnnext_ideas">
+                <span class="material-symbols-outlined"> chevron_right </span>
+            </p>
+        </div>
+
+    </div>
+    <div id="index_footer">
+        <div>
+            <p style="font-size: 25px; color: black; margin-left:20px;">Holiday Homes Across The Globe</p>
+        </div>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Asia')">ASIA</button>
+            <button class="tablinks" onclick="openCity(event, 'Europe')">EUROPE</button>
+            <button class="tablinks" onclick="openCity(event, 'Asia')">NORTH AMERICA</button>
+            <button class="tablinks" onclick="openCity(event, 'Europe')">SOUTH AMERICA</button>
+            <button class="tablinks" onclick="openCity(event, 'Asia')">AFRICA</button>
+            <button class="tablinks" onclick="openCity(event, 'Europe')">OCEANIA</button>
+
+
+        </div>
+        <div id="Asia" class="tabcontent">
+            <div class="row">
+                <div class="column">
+                    <h3>India</h3>
+                    <p>363 Holiay homes</p>
+                    <h3>Georgia</h3>
+                    <p>616 holiday homes</p>
+                    <h3>Cambodia</h3>
+                    <p>26 holiday homes</p>
+                    <h3>Oman</h3>
+                    <p>7 holiday homes</p>
+                </div>
+                <div class="column">
+                    <h3>Thailand</h3>
+                    <p>1284 Holiay homes</p>
+                    <h3>Turkey</h3>
+                    <p>70 holiday homes</p>
+                    <h3>Nepal</h3>
+                    <p>22 holiday homes</p>
+                    <h3>Bangladesh</h3>
+                    <p>5 holiday homes</p>
+                </div>
+                <div class="column">
+                    <h3>Srilanka</h3>
+                    <p>646 Holiay homes</p>
+                    <h3>Israel</h3>
+                    <p>53 holiday homes</p>
+                    <h3>Maldives</h3>
+                    <p>19 holiday homes</p>
+
+                </div>
+                <div class="column">
+                    <h3>Indonesia</h3>
+                    <p>363 Holiay homes</p>
+                    <h3>malaysia</h3>
+                    <p>616 holiday homes</p>
+                    <h3>Taiwan, Province Of China</h3>
+                    <p>26 holiday homes</p>
+
+                </div>
+                <div class="column">
+                    <h3>Phillipines</h3>
+                    <p>378 Holiay homes</p>
+                    <h3>Japan</h3>
+                    <p>46 holiday homes</p>
+                    <h3>Hong Kong</h3>
+                    <p>16 holiday homes</p>
+
+                </div>
+            </div>
+        </div>
+        <div id="Europe" class="tabcontent">
+            <div class="row">
+                <div class="column">
+                    <h3>Croatia</h3>
+                    <p>15594 Holiay homes</p>
+                    <h3>Finland</h3>
+                    <p>2086 holiday homes</p>
+                    <h3>Sweden</h3>
+                    <p>677 holiday homes</p>
+                    <h3>Poland</h3>
+                    <p>308 holiday homes</p>
+                    <h3>Bulgaria</h3>
+                    <p>63 holiday homes</p>
+                    <h3>Luxembourg</h3>
+                    <p>12 holiday homes</p>
+
+                </div>
+                <div class="column">
+                    <h3>Denmark</h3>
+                    <p>14385 Holiay homes</p>
+                    <h3>Germany</h3>
+                    <p>1910 holiday homes</p>
+                    <h3>Syprus</h3>
+                    <p>593 holiday homes</p>
+                    <h3>Belgium</h3>
+                    <p>270 holiday homes</p>
+                    <h3>Ukrain</h3>
+                    <p>47 holiday homes</p>
+                    <h3>Serbia</h3>
+                    <p>7 holiday homes</p>
+                </div>
+                <div class="column">
+                    <h3>Italy</h3>
+                    <p>9268 Holiay homes</p>
+                    <h3>Hungary</h3>
+                    <p>1260 holiday homes</p>
+                    <h3>Czech Republic</h3>
+                    <p>585 holiday homes</p>
+                    <h3>Slovakia</h3>
+                    <p>141 holiday homes</p>
+                    <h3>Montenigro</h3>
+                    <p>39 holiday homes</p>
+                    <h3>Iceland</h3>
+                    <p>6 holiday homes</p>
+
+                </div>
+                <div class="column">
+                    <h3>Spain</h3>
+                    <p>363 Holiay homes</p>
+                    <h3>Austria</h3>
+                    <p>616 holiday homes</p>
+                    <h3>Portugal</h3>
+                    <p>26 holiday homes</p>
+                    <h3>Slovania</h3>
+                    <p>26 holiday homes</p>
+                    <h3>Albania</h3>
+                    <p>7 holiday homes</p>
+                    <h3>Lithuania</h3>
+                    <p>7 holiday homes</p>
+
+                </div>
+                <div class="column">
+                    <h3>France</h3>
+                    <p>456 Holiay homes</p>
+                    <h3>Greece</h3>
+                    <p>379 holiday homes</p>
+                    <h3>Norway</h3>
+                    <p>834 holiday homes</p>
+                    <h3>Iceland</h3>
+                    <p>55 holiday homes</p>
+                    <h3>Romania</h3>
+                    <p>97 holiday homes</p>
+                    <h3>Amsterdam</h3>
+                    <p>46 holiday homes</p>
+
+                </div>
+
+            </div>
+            <div id="NorthAmerica" class="tabcontent">
+                <div class="row">
+                    <div class="column">
+                        <h3>India</h3>
+                        <p>363 Holiay homes</p>
+                        <h3>Georgia</h3>
+                        <p>616 holiday homes</p>
+                        <h3>Cambodia</h3>
+                        <p>26 holiday homes</p>
+                        <h3>Oman</h3>
+                        <p>7 holiday homes</p>
+                    </div>
+                    <div class="column">
+                        <h3>Thailand</h3>
+                        <p>1284 Holiay homes</p>
+                        <h3>Turkey</h3>
+                        <p>70 holiday homes</p>
+                        <h3>Nepal</h3>
+                        <p>22 holiday homes</p>
+                        <h3>Bangladesh</h3>
+                        <p>5 holiday homes</p>
+                    </div>
+                    <div class="column">
+                        <h3>Srilanka</h3>
+                        <p>646 Holiay homes</p>
+                        <h3>Israel</h3>
+                        <p>53 holiday homes</p>
+                        <h3>Maldives</h3>
+                        <p>19 holiday homes</p>
+
+                    </div>
+                    <div class="column">
+                        <h3>Indonesia</h3>
+                        <p>363 Holiay homes</p>
+                        <h3>malaysia</h3>
+                        <p>616 holiday homes</p>
+                        <h3>Taiwan, Province Of China</h3>
+                        <p>26 holiday homes</p>
+
+                    </div>
+                    <div class="column">
+                        <h3>Phillipines</h3>
+                        <p>378 Holiay homes</p>
+                        <h3>Japan</h3>
+                        <p>46 holiday homes</p>
+                        <h3>Hong Kong</h3>
+                        <p>16 holiday homes</p>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
+
+<script src="./Abhijeet/Scripts/index_fun.js"></script>
+<script src="../Abhijeet/Scripts/admin_Btn_Navbar.js"></script>
+<script src="../Abhijeet/Scripts/footer.js"></script>
+<!-- Crousel -->
+<script src="../Abhijeet/Scripts/crousel.js"></script>
+<script src="../Abhijeet/Scripts/crousel_idea.js"></script>
+<script src="./Abhijeet/Scripts/index.js"></script>

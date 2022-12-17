@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+    <style>
+        #box{
+            width: 90%;
+            margin: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 2%;
+            border-radius: 10px;
+        }button{
+            padding: 1% 2.5%;
+            border: 0ch;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+        #bottom{
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #box>p{
+            font-size: 30px;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            padding: 5px;
+            margin: 15px;
+            padding-left: 10px;
+        }
+        #image{
+            margin-top: 20px;
+            width: 200px;
+            height: 150px;
+            border: 1px solid black;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>Preview Your Property</p>
+        <hr>
+        <div id="mid">
+            <p>1 Listing will be created with following information.</p>
+            <!-- <div id="mid-1">
+                <p>Title: (Please edit the title as you deem fit.)</p>
+                <input type="text" id="title">;
+            </div>
+            <hr>
+            <div id="mid-2">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+            </div> -->
+        </div>
+        <hr>
+        <div id="bottom">
+            <button id="previous">PREVIOUS</button>
+            <button id="upload">UPLOAD</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let previous=document.getElementById("previous");
+    previous.addEventListener("click",()=>{
+        window.location.href="7.html";
+    })
+
+    let upload=document.getElementById("upload");
+    upload.addEventListener("click",()=>{
+       // window.location.href="";  landing page
+       let data=JSON.parse(sessionStorage.getItem("map-data"));
+       localStorage.setItem("data", JSON.stringify(data));
+       alert("data updated successfully");
+       window.location.href="9.html";
+    })
+    
+
+    let title=document.getElementById("title");
+    let data=JSON.parse(sessionStorage.getItem("map-data"));
+    // console.log(data);
+    // console.log(data.accomArr[0])
+    let table=data.accomArr.map((elem,i)=>{
+        let data=JSON.parse(sessionStorage.getItem("map-data"));
+        //console.log(data);
+        return `
+        <div class="mid-1">
+                <p>Title: (Please edit the title as you deem fit.)</p>
+                <input type="text" id="title" value="${data.accomArr[i]} in ${data.city}, ${data.state}">
+            </div>
+            <hr>
+            <div class="mid-2">
+                <input type="text" value="${data.city}, ${data.state}, ${data.country}">
+                <input type="text" value="${data.brand}">
+                <input type="text" value="${data.accomArr[i]}">
+                <input type="text" value="${data.property}">
+                <input type="text" value="${data.rates.meal}">
+                <input type="text" value="Max_Guests: ${data.accomArrData[i].max_guests}">
+                <input type="text" value="${data.accomArrData[i].available[0] || "happy"}">
+                <input type="text" value="${data.state}">
+            </div
+            <div id="image">
+            <img height="300px" width="250px" src="${data["image_url"][i]}">
+            <div>
+            `
+           
+            
+            
+    });
+    
+    let mid = document.getElementById("mid");
+    mid.innerHTML=table.join("");
+
+</script>
