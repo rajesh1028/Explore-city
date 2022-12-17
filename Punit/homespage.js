@@ -175,3 +175,9 @@ faqsMain.innerHTML = `
             ExploreCities has different types of holiday homes you can choose from in ${DisplaycityName}. 
             We have 91 Apartments, 5 Cottages, 10 Homestays, 28 Resorts, 74 Rooms, 83 Villas
           </p>`;
+
+
+
+
+// Code Edit
+  // let city_Name = localStorage.getItem('city_Name')
