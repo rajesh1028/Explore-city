@@ -7,7 +7,7 @@
   }
 
   #website-logo{
-    font-size: 50px;
+    font-size: 40px;
     /* border: 1px solid white; */
     width: 18%;
     text-align: center;
@@ -22,7 +22,7 @@
     width: 15%;
   }
   #nav-buttons > button {
-    font-size: 30px;
+    font-size: 25px;
     padding: 15px;
     margin: 10px auto;
     background-color:rgb(39,39,38);
@@ -30,12 +30,12 @@
     border: 0px;
   }
   #menu_btn{
-    height: 50px;
+    height:35px;
     width: 50px;
     margin: auto;
   }
   #sigin_btn{
-    height: 50px;
+    height: 35px;
     width: 50px;
     margin: auto;
   }
