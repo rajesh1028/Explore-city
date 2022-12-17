@@ -1,0 +1,58 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/* .....................image slider....................... */
+#imgAndTitleMainDiv {
+  border: 1px solid red;
+  width: 65%;
+  margin-top: 40px;
+  margin-left: 40px;
+  display: flex;
+  gap: 20px;
+}
+#slideImages {
+  scroll-behavior: smooth;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+#slideImages img {
+  max-width: 36vw;
+  min-width: 36vw;
+}
+.images {
+  object-fit: cover;
+}
+#slide {
+  position: relative;
+  width: 55%;
+}
+#slide button {
+  position: absolute;
+  font-size: 55px;
+  font-weight: lighter;
+  color: rgb(214, 214, 214);
+  background-color: transparent;
+  cursor: pointer;
+  border: 0px;
+  opacity: 0%;
+}
+#slide button:first-child {
+  left: 8px;
+  top: 41.2%;
+}
+#slide button:last-child {
+  right: 8px;
+  bottom: 41.2%;
+}
+#slide:hover button {
+  opacity: 100%;
+}
+/* title section  */
+#titleDiv {
+  
+  padding: 20px;
+}
