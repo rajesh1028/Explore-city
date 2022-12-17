@@ -89,6 +89,7 @@
   aspect-ratio: 1/1;
   width: 333px;
   height: 200px;
+  cursor: pointer;
 }
 .HHslideDataDiv div {
   margin: 10px;
