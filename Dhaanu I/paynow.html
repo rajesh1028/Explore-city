@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment-Debit_Card-Credit_Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #container {
+            /* border:1px solid black; */
+            width: 40%;
+            margin: auto;
+            text-align: center;
+
+        }
+
+        #month,
+        #year {
+            width: 30%;
+            height: 40px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+
+        }
+
+        #cardnumber,
+        #ccv {
+            width: 62%;
+            height: 40px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        #ccv:focus,
+        #cardnumber:focus,
+        #month:focus,
+        #year:focus {
+            outline: 2px solid rgb(47, 208, 236);
+        }
+
+        img {
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        #box {
+            z-index: 1000;
+            position: relative;
+            margin-top: -55%
+        }
+
+        #submit {
+            border-radius: 10px;
+            width: 250px;
+            height: 40px;
+            background-color: rgb(88, 213, 235);
+            border: none;
+            font-size: 17px;
+            margin-bottom: 30px
+        }
+
+        #paymentdiv {
+            position: relative;
+            margin-top: -55%;
+
+
+            z-index: 10000;
+            margin: auto;
+            width: 20%;
+            display: flex;
+            margin-bottom:20px
+
+
+        }
+
+        #otp {
+            border-radius: 10px;
+            border: 1px solid black;
+            margin: auto;
+
+            width: 40%;
+            height: 35px;
+
+            border: none;
+            border-radius: 10px;
+        }
+
+        #otpbutton {
+            border-radius: 10px;
+            background-color: rgb(127, 197, 255);
+            width: 40%;
+            height: 40px;
+        }
+        #Checkotp{
+            background-color:  rgb(88, 213, 235);
+            margin:auto;
+            border: 1px solid black;
+            position: relative;
+            margin-top: -50%;
+            margin-left:600px;
+
+            z-index: 10000;
+        }
+
+        @media screen and (min-width:601px) and (max-width:1100px) {
+
+            #heading {
+                font-size: 10px;
+                margin-top: 0px
+            }
+
+            h4 {
+                margin-top: 0px
+            }
+
+            img {
+                height: 100%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img width="100%" height="100%"
+        src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/Pimal2-1.2d5d237dbd32.jpg"
+        alt="background image">
+
+    <div id="box">
+        <h1 id="heading" style="text-align:center;font-size:90px;margin-top:-30px">Explore City</h1>
+
+        <h4 style="margin:auto;text-align: center;margin-bottom:10px;margin-top:20px;font-size:30px">Add Credit
+            Card/Debit Card to Pay re 1</h4>
+
+        <div id="container">
+            <input id="cardnumber" type="text" maxlength="16" placeholder="Enter your 16 digits Card number"> <br>
+            <input id="month" maxlength="2" min="1" max="12" placeholder="MM" type="text" />
+            <input id="year" maxlength="2" placeholder="YY" type="text" /> <br>
+            <input id="ccv" maxlength="3" type="text" placeholder="Enter 3 digit CCV">
+            <br><br>
+            <button id="submit">Submit to Pay Re.1</button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let dataArr = JSON.parse(localStorage.getItem("sensitiveinfo")) || [];
+
+    document.querySelector("#submit").addEventListener("click", (() => {
+        let cardNumber = document.getElementById("cardnumber").value;
+        let month = document.getElementById("month").value;
+        let year = document.getElementById("year").value;
+        let ccv = document.getElementById("ccv").value;
+
+
+        document.getElementById("cardnumber").value = ""
+        document.getElementById("month").value = ""
+        document.getElementById("year").value = ""
+        document.getElementById("ccv").value = ""
+
+
+        let div = document.createElement("div");
+        div.setAttribute("id", "paymentdiv");
+
+        let otpbutton = document.createElement("button")
+        otpbutton.setAttribute("id", "otpbutton")
+        otpbutton.innerText = "OTP Generator"
+        let input = document.createElement("input");
+        input.setAttribute("id", "otp");
+        input.setAttribute("placeholder", "enter OTP")
+        div.append(otpbutton, input)
+        document.querySelector("body").append(div)
+
+        let noteOTP = 0;
+        otpbutton.addEventListener("click", (() => {
+            let numbers = "0123456789";
+            let OTPdigits4 = "";
+            for (let i = 0; i < 4; i++) {
+                OTPdigits4 = OTPdigits4 + numbers[Math.floor(Math.random() * 10)];
+            }
+            noteOTP = OTPdigits4;
+            console.log(noteOTP)
+
+
+            if (input !== "") {
+                let submitotp = document.createElement("button");
+                submitotp.innerText="Verify OTP"
+                submitotp.setAttribute("id","Checkotp")
+                document.querySelector("body").append(submitotp)
+                submitotp.addEventListener("click", (() => {
+
+                    if (noteOTP === input.value) {
+                        alert("OTP verified & Payment of Re 1 done")
+                        input.value=""
+                        
+                    }
+                    else{
+                        alert("Invalid OTP -> Retry")
+                        input.value=""
+                        
+                    }
+                }))
+            }
+
+
+
+        }))
+    }))
+
+</script>
