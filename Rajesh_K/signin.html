@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <style>
+            
+        *{
+            background-color:  rgb(200, 200, 240);
+        }
+        #home {
+            width: 30%;
+            margin: 10px 34%;
+        }
+
+        #home:hover{
+            cursor: pointer;
+        }
+
+        a+p{
+            text-align: center;
+            font-size: 20px;
+            color: rgb(133, 86, 86);
+        }
+
+        form{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            width: 36%;
+            margin: auto;
+            gap: 8px;
+        }
+
+        form>input{
+            padding: 3%;
+            border: 1px solid wheat;
+            border-radius: 5px;
+            background-color: whitesmoke;
+        }
+
+        #submit{
+            margin-top: 4%;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            transition: 0.5s;
+        }
+        #submit:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        p{
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Signin to continue</p>
+    <form>
+        Username
+        <input type="email" placeholder="Work Email" id="mail">
+        Password
+        <input type="password" placeholder="Password" id="password">
+        <input id="submit" type="submit" value="SIGN IN">
+    </form>
+    <p>New User?  <a href="signup.html">Sign Up</a></p>
+</body>
+</html>
+<script>
+    let dataArr= JSON.parse(localStorage.getItem("sign-up"));
+let form=document.querySelector("form")
+form.addEventListener("submit",getData)
+
+function getData(event){
+    event.preventDefault();
+
+    let obj={
+        mail:form.mail.value,
+        pwd:form.password.value
+    }
+
+    if(obj.mail=="" || obj.pwd==""){
+        alert("Fill the Details")
+    }else{
+        flag=false;
+        dataArr.forEach((elem,i)=>{
+            if(obj.mail==elem.mail && obj.pwd==elem.pwd){
+                flag=true;
+            }
+        })
+        if(flag){
+            alert("SignIn Successful")
+        }else{
+            alert("Enter Valid Credentials")
+        }
+
+
+        async function login(obj) {
+                try {
+                    let request = await fetch(`https://gold-salamander-shoe.cyclic.app/users`, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            //Authorization : `Bearer `
+                        },
+                        //body: JSON.stringify(obj)
+                    });
+
+                   // if (request.ok) {
+                        //  let Token = await request.json();
+                        //  localStorage.setItem("token",JSON.stringify(Token.accessToken));
+                        //console.log(request.json());
+                   // }
+        
+                // localStorage.setItem("token",JSON.stringify(Token.accessToken));
+
+                } catch (error) {
+                    alert(error);
+                }
+            }
+            login(obj);
+
+
+
+
+
+
+         window.location.href = "1.html";
+    }
+}
+
+</script>
