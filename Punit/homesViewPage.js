@@ -123,6 +123,22 @@ let checkoutData = document.querySelector("#checkoutData");
 let noOfGuests = document.querySelector("#noOfGuests");
 let dateAndGuests = document.querySelector("#noOfGuests");
 
+// ...............................change events functions.............................
+checkinData.addEventListener("change", function () {
+  let date1 = new Date(checkinData.value);
+  let date2 = new Date(checkoutData.value);
+  let days = (date2.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24);
+  total = +price * +days * +noOfGuests.value;
+  if (date2.getTime() <= date1.getTime()) {
+    alert("please select correct Checkout Date");
+  } else {
+    if (isNaN(total)) {
+      total = 0;
+    }
+    document.querySelector("#appendTotal").innerText = total;
+  }
+});
+
 checkoutData.addEventListener("change", function () {
   let date1 = new Date(checkinData.value);
   let date2 = new Date(checkoutData.value);
