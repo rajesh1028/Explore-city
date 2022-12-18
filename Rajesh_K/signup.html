@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        * {
+            background-color: rgb(200, 200, 240);
+        }
+
+        #home {
+            width: 30%;
+            margin: 10px 34%;
+        }
+
+        #home:hover {
+            cursor: pointer;
+        }
+
+        a+p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            width: 36%;
+            margin: auto;
+            gap: 8px;
+        }
+
+        form>input {
+            padding: 3%;
+            border: 1px solid wheat;
+            border-radius: 5px;
+            background-color: whitesmoke;
+        }
+
+        #submit {
+            margin-top: 4%;
+            background-color: rgb(141, 141, 235);
+            color: whitesmoke;
+            transition: 0.5s;
+        }
+
+        #submit:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        p {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Get Started for FREE</p>
+    <form>
+        First Name
+        <input type="text" placeholder="First Name" id="firstname">
+        Last Name
+        <input type="text" placeholder="Last Name" id="lastname">
+        User Name
+        <input type="text" placeholder="User Name" id="username">
+        User Level
+        <input type="number" placeholder="User Name" id="userlevel">
+        Email
+        <input type="email" placeholder="Work Email" id="mail">
+        Password
+        <input type="password" placeholder="Password" id="password">
+        <input id="submit" type="submit" value="SIGN UP">
+    </form>
+    <p>Already have an account? <a href="signin.html">Sign In</a></p>
+</body>
+
+</html>
+<script>
+    let dataArr = JSON.parse(localStorage.getItem("sign-up")) || [];
+    let form = document.querySelector("form")
+    form.addEventListener("submit", getData)
+
+    function getData(event) {
+        event.preventDefault();
+
+        let obj = {
+            avatar: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/av",
+            mail: form.mail.value,
+            firstname: form.firstname.value,
+            lastname:form.lastname.value,
+            password: form.password.value,
+            userLevel:form.userlevel.value,
+            username:form.username.value
+        }
+
+        if (obj.name == "" || obj.mail == "" || obj.pwd == "") {
+            alert("Fill all the Details")
+        } else {
+            dataArr.push(obj);
+            console.log(obj);
+            async function register(obj) {
+                try {
+                    let request = await fetch(`https://gold-salamander-shoe.cyclic.app/users`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(obj)
+                    });
+
+                    if (request.ok) {
+                        let Token=await request.json();
+                        console.log(Token);
+                    }
+                
+                    localStorage.setItem("sign-up",JSON.stringify(dataArr));
+
+
+                } catch (error) {
+                    alert(error);
+                }
+            }
+            register(obj);
+
+
+            //localStorage.setItem("sign-up",JSON.stringify(dataArr));
+            alert("SignUp Successful")
+             window.location.href = "signin.html";
+        }
+    }
+
+</script>
