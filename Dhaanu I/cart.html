@@ -44,8 +44,8 @@
 
         #selecteditem {
             display: flex;
-            /* border: 1px solid black; */
-            height: 100px;
+           
+            height: 150px;
             margin-bottom: 30px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
@@ -268,6 +268,31 @@
             width: 50px;
             margin: auto;
         }
+        #cartimage{
+            width:110%;
+            height:100%
+        }
+        #image{
+            width:35%
+        }
+        #selectedinfo{
+            padding-left:5px
+        }
+
+        #cartinfo,
+        #country,
+        #completeinfo{
+            margin-left:30px
+        }
+        #checkin,#checkout,#num,#units{
+            text-align: center;
+        }
+        #unit{
+            margin-top:-20px
+        }
+        #total{
+            font-weight: bold;
+        }
     </style>
 
 </head>
@@ -327,21 +352,21 @@
                 </ul>
             </div>
             <div id="selecteditem">
-                <div></div>
-                <div></div>
+                <div id="image"></div>
+                <div id="selectedinfo"></div>
             </div>
             <div id="datetime">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div id="checkin"></div>
+                <div id="checkout"></div>
+                <div id="num"></div>
+                <div id="units"></div>
             </div>
             <div id="calculate">
-                <p>Sub Total</p>
-                <p>Discount</p>
-                <p>Tax</p>
-
-                <p>Total</p>
+                <p id="subtotal"></p>
+                <p id="discount"></p>
+                <p id="tax"></p>
+ <hr>
+                <p id="total"></p>
             </div>
             <hr>
             <div id="info">

@@ -168,6 +168,9 @@ bookBtn.addEventListener("click", function () {
     refid: homeRefID,
     checkindate: checkinData.value,
     checkout: checkoutData.value,
+    guests:noOfGuests.value
   };
   console.log(obj);
+  sessionStorage.setItem("dataObject",JSON.stringify(obj))
+  window.location.href="../Dhaanu I/cart.html"
 });
