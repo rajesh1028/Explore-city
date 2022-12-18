@@ -70,9 +70,9 @@ function displayData(filteredData) {
   let filteredDataArr = filteredData.map((elem) => {
     console.log(elem);
     return `
-            <div class="HHslideDataDiv">
+            <div class="HHslideDataDiv" data-id="${elem.refid}">
               <img src="${elem.img_url}" alt="" />
-              <div>
+              <div class="HHSlideTextDiv" data-id="${elem.refid}">
                 <p style="color: rgb(143, 143, 143); margin-top: 5px; font-size: 12px;">Ref id #${
                   elem.refid
                 }</p>
@@ -83,17 +83,25 @@ function displayData(filteredData) {
                 <p style="color: rgb(30, 135, 240);font-size: 12px; margin-top: 13px;">${
                   elem.type_of_property
                 }</p>
-                <span style="display: flex; align-items: baseline;"
+                <div style="display: flex; align-items: baseline;" data-id="${elem.refid}"
                   ><h3 style="color: rgb(30, 135, 240);margin-top: 10px;">₹${
                     elem.costpernight
                   }</h3>
-                  <p style="font-size:10px;">&nbsp; per night</p></span
+                  <p style="font-size:10px;">&nbsp; per night</p></div
                 >
               </div>
             </div>`;
   });
   filteredDataArr = filteredDataArr.join("");
   HHslideDiv.innerHTML = filteredDataArr;
+  let HHslideDataDiv = document.querySelectorAll(".HHslideDataDiv");
+  for (dataDiv of HHslideDataDiv) {
+    dataDiv.addEventListener("click", function (event) {
+      let id = event.target.parentNode.dataset.id
+      sessionStorage.setItem("refid", id)
+      window.location.href="homesViewPage.html"
+    });
+  }
 }
 
 // slide button function
@@ -167,3 +175,9 @@ faqsMain.innerHTML = `
             ExploreCities has different types of holiday homes you can choose from in ${DisplaycityName}. 
             We have 91 Apartments, 5 Cottages, 10 Homestays, 28 Resorts, 74 Rooms, 83 Villas
           </p>`;
+
+
+
+
+// Code Edit
+  // let city_Name = localStorage.getItem('city_Name')
