@@ -166,10 +166,11 @@
         }
 
         #payone {
-           
+
             border: 1px solid rgb(143, 139, 139);
             padding: 10px
         }
+
         #payOne {
             display: flex;
             /* border: 1px solid black; */
@@ -180,11 +181,13 @@
             margin-top: 17px;
             margin-right: 10px
         }
+
         #paydebit {
             display: flex;
             /* border: 1px solid black; */
             padding: 10px
         }
+
         #paycard {
             border: 1px solid rgb(143, 139, 139);
             margin-top: 30px;
@@ -194,35 +197,113 @@
         #info {
             color: rgb(117, 119, 124)
         }
-        #agreeButton{
-            background-color:rgb(30,135,240);width:100%;margin-top:20px;
+
+        #agreeButton {
+            background-color: rgb(30, 135, 240);
+            width: 100%;
+            margin-top: 20px;
         }
 
         @media screen and (min-width:601px) and (max-width:1100px) {
             #container {
-            display: flex;
-            flex-direction: column;
-            margin-right:-300px
-        }
-        #subcontainer1 {
-            width: 80%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* border: 1px solid black; */
+                display: flex;
+                flex-direction: column;
+                margin-right: -300px
+            }
+
+            #subcontainer1 {
+                width: 80%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                /* border: 1px solid black; */
+            }
+
+            #subcontainer2 {
+                width: 80%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                /* border: 1px solid black; */
+            }
+
         }
 
-        #subcontainer2 {
-            width: 80%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* border: 1px solid black; */
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(39, 39, 38);
+            color: white;
         }
-          
+
+        #website-logo {
+            font-size: 40px;
+            /* border: 1px solid white; */
+            width: 18%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #nav-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            /* border: 1px solid white; */
+            text-align: center;
+            width: 15%;
+        }
+
+        #nav-buttons>button {
+            font-size: 25px;
+            padding: 15px;
+            margin: 10px auto;
+            background-color: rgb(39, 39, 38);
+            color: white;
+            border: 0px;
+        }
+
+        #menu_btn {
+            height: 35px;
+            width: 50px;
+            margin: auto;
+        }
+
+        #sigin_btn {
+            height: 35px;
+            width: 50px;
+            margin: auto;
         }
     </style>
+
 </head>
 
 <body>
-    <div>
-        <!-- Navbar -->
+    <div id="navbar">
+        <div id="website-logo"><i><b>Explorecity</b></i></div>
+        <div id="nav-buttons">
+            <div class="dropdown">
+                <img onclick="myFunction()" class="dropbtn" id="sigin_btn"
+                    src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png"
+                    alt="SignIn">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Sign- In</a>
+                    <a href="#">Sign- Up</a>
+                </div>
+            </div>
+            <button>INR</button>
+            <!-- <div class="dropdown">
+                <button onclick="myFunctionINR()" class="dropbtn" id="inr_btn">INR</button>
+                <div id="myDropdown" class="dropdown-contentinr">
+                    <a href="#">INR</a>
+                    <a href="#">AED</a>
+                    <a href="#">USD</a>
+                    <a href="#">EU</a>
+                    <a href="#">AUD</a>
+                    <a href="#">CAD</a>
+                    <a href="#">BRL</a>
+                    <a href="#">NZD</a>
+                    <a href="#">PLN</a>
+                  </div>
+            </div> -->
+            <img id="menu_btn" src="https://icon-library.com/images/three-bar-menu-icon/three-bar-menu-icon-3.jpg"
+                alt="Menu">
+
+        </div>
     </div>
 
     <div id="container">
@@ -360,25 +441,27 @@
 
                 </div>
                 <hr style="margin-top:-5px;margin-bottom:30px">
-             <div id="payone">
-                <div id="payOne">
-                    <div id="imagetickone">
-                        <img height="70" width="60" src="https://cdn-icons-png.flaticon.com/128/1828/1828649.png"
-                            alt="bluetick">
+                <div id="payone">
+                    <div id="payOne">
+                        <div id="imagetickone">
+                            <img height="70" width="60" src="https://cdn-icons-png.flaticon.com/128/1828/1828649.png"
+                                alt="bluetick">
+                        </div>
+                        <div style="margin-left:5px">
+                            <p style="font-size:larger;margin-bottom:-10px">Pay ₹1 Now.</p style="size:medium">
+                            <p style="color:rgb(153,161,183);margin-bottom:-10px">Pay the rest using a payment link only
+                                when home owner/manager accepts the booking.</p>
+                            <p style="font-weight:lighter"> If owner declines the booking, ₹1 will be refunded back to
+                                you.
+                                Pay using 100+ payment modes including Credit/Debit cards, Netbanking, UPI, Wallets etc.
+                            </p>
+                        </div>
                     </div>
-                    <div style="margin-left:5px">
-                        <p style="font-size:larger;margin-bottom:-10px">Pay ₹1 Now.</p style="size:medium">
-                        <p style="color:rgb(153,161,183);margin-bottom:-10px">Pay the rest using a payment link only
-                            when home owner/manager accepts the booking.</p>
-                        <p style="font-weight:lighter"> If owner declines the booking, ₹1 will be refunded back to you.
-                            Pay using 100+ payment modes including Credit/Debit cards, Netbanking, UPI, Wallets etc.</p>
+                    <div id="buttonpayone">
+
                     </div>
                 </div>
-                <div id="buttonpayone">
-                    
-                </div>
-             </div>
-                
+
                 <div id="paycard">
                     <div id="paydebit">
                         <div id="imagetickdebit">
@@ -387,19 +470,21 @@
                         <div>
                             <p style="font-size:larger;margin-bottom:-10px">Put your credit/debit card on file.</p
                                 style="size:medium">
-                            <p style="color:rgb(153,161,183);margin-bottom:-10px">Since this booking is on 'Request To Book', We
+                            <p style="color:rgb(153,161,183);margin-bottom:-10px">Since this booking is on 'Request To
+                                Book', We
                                 will only charge your card once owner accepts the
                                 booking.
                             <p style="margin-bottom:-10px;font-weight:lighter"> This is 100% Secure</p>
                             </p>
                             <p style="color:rgb(153,161,183);margin-bottom:-10px"> We DO NOT store/save your credit card
                                 details.</p>
-                            <p style="font-weight:lighter"> We use Stripe.com. has been audited by an independent PCI Qualified
+                            <p style="font-weight:lighter"> We use Stripe.com. has been audited by an independent PCI
+                                Qualified
                                 Security Assessor (QSA) and is certified as a PCI Level 1 Service Provider.</p>
                         </div>
-                        
+
                     </div>
-                    
+
 
                     <div id="button">
                         <button id="choosedebit" style="cursor:pointer">CHOOSE THIS METHOD</button>
@@ -412,9 +497,9 @@
 
             </div>
             <div id="finalbutton">
-                <button id="agreeButton">AGREE & CONTINUE</button> 
+                <button id="agreeButton">AGREE & CONTINUE</button>
             </div>
-          
+
         </div>
     </div>
 

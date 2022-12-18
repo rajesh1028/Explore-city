@@ -79,13 +79,13 @@
         #but{
             width:68%;
         }
-        #paynow button{
+        #payone{
             width:100%;
             height:90%;
             margin-top:5px;
             font-size: 20px;
         }
-        #onhover{
+        /* #onhover{
             display: none;
             position:relative;
             margin-top:-470px;
@@ -96,7 +96,7 @@
             margin-left:30px;
             padding:4px;
             
-        }
+        } */
         
     </style>
 </head>
@@ -217,11 +217,11 @@
             <p>View details</p>
         </div>
         <div id="but">
-            <button>Pay Now</button>
+            <button id="payone" onclick="clickme()">Pay Now</button>
         </div>
     </div>
 
-    <div id="onhover">
+    <!-- <div id="onhover">
 
         <input id="cardnumber" type="text" maxlength="16" placeholder="Enter your 16 digits Card number"> <br>
         <input id="month" maxlength="2"  min="1" max="12" placeholder="MM" type="text" />
@@ -230,7 +230,7 @@
         <br><br>
         <p>Proceed to click Pay Now </p>
 
-    </div>
+    </div> -->
 </body>
 
 </html>
@@ -242,11 +242,7 @@
             document.getElementById("upi").style.backgroundColor=""
             document.getElementById("netbank").style.backgroundColor=""
             document.getElementById("wallet").style.backgroundColor=""
-            document.getElementById("later").style.backgroundColor="";
-            document.querySelector("#onhover").style.display="block"
-             
-
-            
+            document.getElementById("later").style.backgroundColor=""; 
          });
         
 
@@ -256,10 +252,6 @@
             document.getElementById("netbank").style.backgroundColor=""
             document.getElementById("wallet").style.backgroundColor=""
             document.getElementById("later").style.backgroundColor=""
-
-            document.querySelector("#onhover").style.display="none"
-
-
          });
           document.getElementById("netbank").addEventListener("click",function(){
             document.getElementById("netbank").style.backgroundColor="skyblue"
@@ -283,12 +275,11 @@
             document.getElementById("upi").style.backgroundColor=""
          });
          
-         
-        //  document.querySelector("button").addEventListener("click",(()=>{
-              
-        //       console.log("dhaanu")
+       
+         function clickme(){
+            window.location.href="./paynow.html"
 
-
-        //  }))
+         }
+      
        
 </script>
