@@ -65,11 +65,12 @@
 }
 #HHomescontainer button {
   position: absolute;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: lighter;
   color: rgb(143, 143, 143);
   cursor: pointer;
   border: 0px;
+  background-color: white;
 }
 #HHomescontainer button:first-child {
   left: -32px;

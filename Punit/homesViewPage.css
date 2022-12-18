@@ -4,20 +4,31 @@
   padding: 0px;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+#main {
+  display: flex;
+  justify-content: space-between;
+}
+#mainFirstDiv {
+  width: 69%;
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  position: relative;
+}
 /* .....................image slider....................... */
 #imgAndTitleMainDiv {
-  border: 1px solid red;
-  width: 65%;
-  margin-top: 40px;
-  margin-left: 40px;
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 #slideImages {
   scroll-behavior: smooth;
   display: flex;
   overflow: hidden;
   width: 100%;
+  margin-top: 20px;
 }
 #slideImages img {
   max-width: 36vw;
@@ -28,7 +39,7 @@
 }
 #slide {
   position: relative;
-  width: 55%;
+  width: 52%;
 }
 #slide button {
   position: absolute;
@@ -42,17 +53,190 @@
 }
 #slide button:first-child {
   left: 8px;
-  top: 41.2%;
+  top: 42%;
 }
 #slide button:last-child {
   right: 8px;
-  bottom: 41.2%;
+  bottom: 42%;
 }
 #slide:hover button {
   opacity: 100%;
 }
 /* title section  */
-#titleDiv {
-  
+#titalMainDiv {
   padding: 20px;
+}
+#titleDiv img {
+  margin-right: 10px;
+}
+#maxGuest {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 8px;
+  border: 2px solid rgb(106, 175, 245);
+  color: rgb(106, 175, 245);
+}
+
+/* .......................Price div........................... */
+
+#priceDiv {
+  border: 1px solid rgb(230, 230, 230);
+  height: 100vh;
+  width: 400px;
+  position: sticky;
+  float: left;
+  top: 0;
+}
+/* selection button */
+#selectionBtns {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: sticky;
+  top: 0px;
+  border-bottom: 1px solid rgb(136, 136, 136);
+  background-color: white;
+}
+#selectionBtns img:nth-child(1) {
+  aspect-ratio: 1/1;
+  width: 25px;
+}
+#selectionBtns img:nth-child(3) {
+  aspect-ratio: 1/1;
+  width: 16px;
+  margin-right: 5px;
+}
+#selectionBtns img:nth-child(5) {
+  aspect-ratio: 1/1;
+  width: 18px;
+  margin-right: 5px;
+}
+#selectionBtns img:nth-child(7) {
+  aspect-ratio: 1/1;
+  width: 25px;
+}
+#selectionBtns a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 13px;
+  color: rgb(146, 146, 146);
+}
+#selectionBtns a:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(106, 175, 245);
+  text-decoration-thickness: 2px;
+}
+/* overview */
+#overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  width: 50%;
+  gap: 20px;
+  margin-top: 30px;
+}
+#overview div {
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+#overview > div:nth-child(1) {
+  grid-column: span 2;
+  padding: 35px;
+}
+#overview h2 {
+  font-weight: 400;
+}
+#overview p {
+  color: rgb(146, 146, 146);
+}
+/* ....................................keyAmenities................................. */
+#keyAmenities {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+#keyAmenities > div {
+  border: 1px solid rgb(195, 195, 195);
+  color: rgb(162, 162, 162);
+  padding: 6px 15px;
+}
+/* ................................bedroomandbathroom................................. */
+#bedroomandbathroom > p {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* .......................................map................................ */
+#map {
+  margin-top: 30px;
+}
+#policies {
+  width: 60%;
+  margin-top: 20px;
+  color: rgb(162, 162, 162);
+}
+/* ....................................price section............................... */
+#priceDiv {
+  padding: 40px;
+}
+#priceDiv p {
+  color: rgb(162, 162, 162);
+  font-size: 18px;
+}
+#priceDiv h1 {
+  font-weight: lighter;
+  font-size: 50px;
+}
+#priceDiv > div:nth-child(2) {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+#priceDiv > div:nth-child(3) {
+  margin-top: 30px;
+  padding: 15px;
+  text-align: center;
+  background-color: rgb(223, 255, 244);
+  color: rgb(40, 220, 175);
+}
+#dateAndGuests {
+  display: grid;
+  gap: 10px;
+  margin-top: 30px;
+}
+#dateAndGuests input[type="date"] {
+  height: 45px;
+  text-align: center;
+  font-size: 17px;
+  border: 1px solid rgb(202, 202, 202);
+  color:rgb(202, 202, 202);
+  outline: none;
+}
+#dateAndGuests input[type="number"] {
+  grid-column: span 2;
+  height: 35px;
+  font-size: 17px;
+  color:rgb(202, 202, 202) ;
+  border: 1px solid rgb(202, 202, 202);
+  outline: none;
+  padding: 10px;
+}
+::placeholder{
+  color:rgb(202, 202, 202)
+}
+#totalPriceDiv{
+  display: grid;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+#totalPriceDiv>button{
+  grid-column: span 2;
+  padding: 18px;
+  font-size: 15px;
+  color: white;
+  background-color: rgb(30,135,240);
+  border: 0px;
 }

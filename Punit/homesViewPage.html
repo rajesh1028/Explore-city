@@ -9,21 +9,91 @@
   </head>
   <body>
     <div id="main">
-      
-      <div id="imgAndTitleMainDiv">
-        <!-- ......................image slider.................................... -->
-        <div id="slide">
-          <button id="slideButtonLeft">&#10094;</button>
-          <div id="slideImages">
-            <!-- append images -->
+      <div id="mainFirstDiv">
+        <hr />
+        <div id="imgAndTitleMainDiv">
+          <!-- ......................image slider.................................... -->
+          <div id="slide">
+            <button id="slideButtonLeft">&#10094;</button>
+            <div id="slideImages">
+              <!-- append images -->
+            </div>
+            <button id="slideButtonRight">&#10095;</button>
           </div>
-          <button id="slideButtonRight">&#10095;</button>
+          <!-- ......................title section...................................  -->
+          <div id="titalMainDiv">
+            <div id="titleDiv">
+              <!-- append title and location -->
+            </div>
+            <hr style="margin-top: 30px" />
+            <div id="maxGuest"></div>
+          </div>
         </div>
-        <!-- ......................title section...................................  -->
-        <div id="titleDiv">
-            <!-- append title and location -->
-            <h1 style="font-weight: lighter; color: rgb(106, 108, 109);">Supreme Sea View Stay</h1>
-            <p style="font-weight: lighter; margin-top: 20px; color: rgb(106, 108, 109);"><img style="width: 20px;" src="https://img.icons8.com/ios/2x/marker.png" alt="">Canacona, Goa, India | Palolem</p>
+        <!-- ............................selection button........................... -->
+        <div id="selectionBtns">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPpzdUkcdv14JiiaVL4f_2TtGBc3AKscnm6g&usqp=CAU"
+            alt=""
+          />
+          <a href="#selectionBtns">OVERVIEW</a>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuJljV7MnwSZuBwOEeHk1VJFLFSfLvz0BOzw&usqp=CAU"
+            alt=""
+          />
+          <a href="#AmenitiesH1">AMENITIES</a>
+          <img src="https://img.icons8.com/ios/2x/marker.png" alt="" />
+          <a href="#map">MAP</a>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhYXcRPEwXOEikUViyEyAOPYycdQ1lIDV9mj5_Xt4x4td2SmF5yJ7u-djbKkLLLVYgSc&usqp=CAU"
+            alt=""
+          />
+          <a href="#policies">POLICIES & FEES</a>
+        </div>
+        <!-- ...............................overview......................... -->
+        <div id="overview">
+          <!-- append divs and details -->
+        </div>
+        <!-- ,............................keyAmenities......................... -->
+        <h2 id="AmenitiesH1" style="margin-top: 40px">Key Amenities</h2>
+        <hr style="margin-top: 20px" />
+        <div id="keyAmenities"></div>
+        <!-- ..........................bedroom and bathroom..................... -->
+        <div id="bedroomandbathroom"></div>
+        <!-- ................................map................................ -->
+        <h2 style="margin-top: 40px">Map</h2>
+        <hr style="margin-top: 20px" />
+        <div id="map"></div>
+        <!-- ...........................Policies & Fees......................... -->
+        <h2 style="margin-top: 40px">Policies & Fees</h2>
+        <hr style="margin-top: 20px" />
+        <div id="policies">
+          <p>
+            Default Cancellation Policy Stringent: No charges will be levied if
+            booking is canceled 61 days prior to check-in. If cancellation is
+            done between 30 to 60 days prior to check-in, 50% of the total
+            booking amount will be charged. Post that, there will be no refund.
+          </p>
+        </div>
+      </div>
+      <div id="priceDiv">
+        <p>Starting</p>
+        <div><h1 id="appendPrice"></h1><p>per night</p></div>
+        <div>✓ &nbsp;&nbsp;Your dates are available to book</div>
+        <form id="dateAndGuests">
+          <input id="checkinData" type="date" required>
+          <input id="checkoutData" type="date" required>
+          <input id="noOfGuests" type="number" placeholder="Total No. Of Guests" required>
+        </form>
+        <p style="font-size: 12px; margin-top: 10px;">Rateplan: Morning Breakfast (Continental Plan)</p>
+        <div id="totalPriceDiv">
+          <div>
+            <p style="color: black; font-size: 18px;">Total</p>
+            <p style="font-size: 13px;">Includes taxes & fees</p>
+          </div>
+          <div>
+            <h3 id="appendTotal"></h3>
+          </div>
+          <button id="bookBtn">REQUEST TO BOOK</button>
         </div>
       </div>
     </div>
