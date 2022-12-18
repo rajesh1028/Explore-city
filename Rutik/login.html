@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./signup.css">
+</head>
+<body>
+    <div id="cont">
+        <div><h2>Sign In</h2></div>
+        <form id="form">
+            <div>
+                <label for="">Email</label><br/>
+                <input  type="email" id="email" placeholder="Enter email"><br/>
+            </div>
+            <div>
+                <label for="">Passward</label><br/>
+                <input id="pass" type="password" placeholder="Enter Passward" ><br/>
+            </div>
+            <div>
+                <button id="submit" type="submit">SIGN IN</button>
+            </div>
+            <div>
+                <button type="button">
+                    <span id="id1">
+                        <img src="https://sso.masaischool.com/google.svg" alt="">
+                       <div><span>CONTINUE WITH GOOGLE</span></div> 
+                    </span>
+
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",function(event){
+       event.preventDefault();
+       let mail_check=document.querySelector("#email").value;
+       let password_check=document.querySelector("#pass").value;
+       let objcheck={
+        mail_check,
+        password_check,
+       }
+       let wrong_email=0;
+       let wrong_pass=0;
+       let infArr=JSON.parse(localStorage.getItem("info"));
+       infArr.forEach(function(el,i,arr){
+        
+            if(el.Email==objcheck.mail_check){
+                wrong_email++;
+            }
+            if(el.passward==password_check){
+                wrong_pass++;
+                    
+                }
+            // check(wrong_email,wrong_pass)
+       })
+    //    function check(wrong_email,wrong_pass){
+        if(wrong_email==1&&wrong_pass==1){
+            alert("sign in succesful")
+        // alert("Email dose not exist");
+       }else if(wrong_email==0&&wrong_pass==1){
+        alert("email does not exist");
+       }else if(wrong_email==1&&wrong_pass==0){
+        alert("wrong passward")
+       }else{
+        alert("email and passward does not exist")
+        
+       }
+    //    }
+       
+       
+    })
+    
+</script>
