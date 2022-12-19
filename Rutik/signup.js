@@ -44,7 +44,7 @@ document.querySelector("form").addEventListener("submit",function(event){
          if(msg=="true"){
             infoArr.push(obj);
             alert("sign up succesful")
-            window.location.href="./login.html"
+            window.location.href="./signin.html"
          }else{
             alert("enter correct details")
            
