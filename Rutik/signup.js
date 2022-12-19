@@ -20,7 +20,7 @@ document.querySelector("form").addEventListener("submit",function(event){
     }
     
     if(obj.Email==""){
-        alert("enter email")
+        alert("Enter Email")
     }
     else if(obj.mono.length>10||obj.mono.length<10){
         alert("Please enter correct mobile number")
