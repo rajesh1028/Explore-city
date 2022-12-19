@@ -1,0 +1,65 @@
+body{
+    height: 100vh;
+    /* background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/Pimal2-1.2d5d237dbd32.jpg") ; */
+    /* background-image: linear-gradient(135deg, #130CB7 10%, #52E5E7 10% ,#52e7b8 100%); */
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/Pimal2-1.2d5d237dbd32.jpg") ;
+}
+
+#cont{
+    width: 35%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px 0 50px 0;
+    border-radius: 1rem;
+    background-color: white;
+   
+}
+#form{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 15px 0 15px 0;
+}
+#form>div{
+    height: 40px;
+    width: 100%;
+
+}
+input{
+    width: 98.5%;
+    height: 30px;
+    margin-top: 3px;
+    border-radius: 0.5rem;
+    border: 1px solid gray;
+}
+button{
+    width: 100%;
+    height: 40px;
+    
+    border-radius: 0.5rem;
+    color:white ;
+    background-color: rgb(37,99,235);
+    border: none;
+
+}
+div>p{
+    text-align: center;
+    font-weight: lighter;
+}
+a{
+    color: rgb(37,99,235);
+}
+#id1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
